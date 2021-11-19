@@ -7,5 +7,5 @@ how I use vim
 
 ![main.vim](shots/211119_222800.png)
 
-![keys.vim](shots/211119_222905.png)
+![skels.vim](shots/211119_222905.png)
 
