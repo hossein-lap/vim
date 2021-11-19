@@ -1,72 +1,50 @@
-"
 "   _  _ ___    
-"  | || | __|   Hossein Esmailzadeh
-"  | __ | _|    Email:  hosaidenpwr@protonmail.com
-"  |_||_|___|   Matrix: hosaidenpwd:matrix.org
-"               
-"                                   "
-"" status line section
-" git status function
-"
-"function! GitBranch()
-"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
-"function! StatuslineGit()
-"   let l:branchname = GitBranch()
-"   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction 
-"
-"function! CharCount()
-"   return system("wc -m $ 2>/dev/null")
-"endfunction
-"function! PrintOutCount()
-"   let l:CharOutCount = CharCount()
-"   return strlen(l:CharOutCount) > 0?'  '.l:CharOutCount.' ':''
-"endfunction 
-"
-"function! CharCount()
-"  return system("wc -m % 2> /dev/null | awk '{print $1}' ")
-"endfunction
-"function! ShowCount()
-"  let l:countcharacters = CharCount()
-"  return strlen(l:countcharacters) > 0?'  '.l:countcharacters.' ':''
-"endfunction
-"
-" to display current mode in status line
-let g:currentmode={                
-       \ 'n'  : 'nor',
-       \ 'v'  : 'vis',
-       \ 'V'  : 'v.l',
-   \ "\<C-V>" : 'v.b',
-       \ 'i'  : 'ins',
-       \ 'R'  : 'rep',
-       \ 'Rv' : 'v.r',
-       \ 'c'  : 'cmd',
-       \}
-"
-"" config section
-set laststatus=2                      " show status line
-set statusline=                       " status line config
-set statusline+=%#StatusLine#         " color-scheme
-set statusline+=\ \
-set statusline+=\ \                   " blank space
-set statusline+=%{toupper(g:currentmode[mode()])}\       " show current mode
-set statusline+=\ \»                  " blank space
-set statusline+=\ \                   " blank space
-set statusline+=%f                    " Full path
-set statusline+=\                     " blank space
-set statusline+=%=                    " Switch to the right side
-set statusline+=\                     " blank space
-set statusline+=%r                    " read-only file symbol
-set statusline+=\ \                   " blank space
-set statusline+=%c                    " cursor current position
-set statusline+=\ \                   " blank space
-set statusline+=%l\,%L                " current line:cursor position
-set statusline+=\ \                   " blank space
-set statusline+=\-%Y\-                " file type
-set statusline+=\ \                   " blank space
-set statusline+=%{strftime('%H:%M')}  " show time 
-set statusline+=\                     " blank space
-set statusline+=\[%M\]                " modification symbol
-set statusline+=\                     " blank space
-"
+"  | || | __|   H
+"  | __ | _|    A
+"  |_||_|___|   P
+"                
+"" Color: {{{
+hi User1 ctermfg=015 ctermbg=235 guifg=#f1f1f1 guibg=#121212 "
+"" }}}
+
+"" git function {{{
+function! StatuslineGitBranch()
+    if exists("g:git_branch")
+        return g:git_branch
+    else
+        return ''
+    endif
+endfunction
+
+function! GetGitBranch()
+    let l:is_git_dir = system('echo -n $(git rev-parse --is-inside-work-tree)')
+    let g:git_branch = l:is_git_dir == 'true' ?
+        \ system('bash -c "echo -n $(git rev-parse --abbrev-ref HEAD)"') : ''
+endfunction
+
+autocmd BufEnter * call GetGitBranch()
+"" }}}
+"" Status Line: {{{
+set laststatus=2                  " show status line
+set statusline=                   " status line config
+set statusline+=%1*\              " set color, blank space
+"set statusline+=%#StatusLine#\    " default status color
+set statusline+=\                 " blank space
+set statusline+=%f  			  " full path
+set statusline+=\                 " blank space
+set statusline+=%m                " show modification symbol
+set statusline+=\                 " blank space
+set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
+set statusline+=\                 " blank space
+set statusline+=%=                " switch to the right side
+set statusline+=%y                " file-type 
+set statusline+=\ \               " blank space
+set statusline+=%c                " separator
+set statusline+=\ \               " blank space
+set statusline+=%l\:%L            " line numbers
+set statusline+=\ \ \ \ \ \       " blank space
+set statusline+=\ \ \ \ \ \       " blank space
+set statusline+=\                 " blank space
+set statusline+=%P                " modification symbol
+set statusline+=\                 " separator
+"" }}}

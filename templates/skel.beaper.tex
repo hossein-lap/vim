@@ -1,0 +1,68 @@
+\documentclass[12pt]{beamer}
+
+\author{}
+\title[آموزش لاتک]{\raggedleft ساخت اسلاید با بیمر}
+
+\usepackage{multicol}
+\usepackage{xcolor}
+\usefonttheme{serif}
+\usepackage{tikz}
+
+%%% custom theme {{{ 
+%\usetheme{Warsaw}
+%\usetheme{Copenhagen}
+\usetheme{metropolis}
+%\usecolortheme{spruce}
+%\usecolortheme{seahorse}
+%%\definecolor{mygreen}{rgb}{.125,.5,.25}
+%%% }}}
+
+% metropolis theme {{{ 
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{spruce}
+%\usecolortheme{seahorse}
+\setbeamercolor{background canvas}{bg=white}
+% }}}
+
+\usepackage{xepersian}
+\settextfont{XB Yas}
+\ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \ExplSyntaxOff
+\setdigitfont{XB Yas}
+
+\begin{document}
+\frame{\maketitle}
+\begin{frame}\raggedleft
+\frametitle{صفحه اول}
+نمونه شماره یک
+
+    \begin{multicols}{2}
+    \begin{itemize}\raggedleft
+        \item یک
+        \item دو
+        \item سه
+        \item چهار
+    \end{itemize}
+    \end{multicols}
+\end{frame}
+
+\begin{frame}[t]{نمونه بلوک ها}
+
+    \begin{exampleblock}{بلوک نمونه}
+        این بلوک اول است
+    \end{exampleblock}
+
+    \begin{theorem}{بلوک تعریف}
+        این بلوک دوم است
+    \end{theorem}
+
+    \begin{alertblock}{بلوک هشدار}
+        این بلوک سوم است
+    \end{alertblock}
+    
+\end{frame}
+
+\end{document}

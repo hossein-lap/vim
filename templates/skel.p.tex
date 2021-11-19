@@ -1,0 +1,48 @@
+%  _  _ ___    
+% | || | __|   H
+% | __ | _|    A
+% |_||_|___|   P
+%              
+
+\documentclass[12pt,a4paper]{article}
+
+% usepackage{{{
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{xepersian}
+%}}}
+% section formatting{{{
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+
+\titleformat{\section} {\huge \bfseries}{}{0em}{}%[{\titlerule[2pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+
+\titleformat{\subsection} {\Large \bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+\titleformat{\subsubsection} {\bfseries}{}{0em}{}
+\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
+% end formatting
+%}}}
+% font config{{{
+\settextfont{XB Yas}
+\ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \ExplSyntaxOff
+\setdigitfont{XB Yas}
+
+\defpersianfont\titr{XB Titre}
+\defpersianfont\nast{IranNastaliq}
+%}}}
+
+%\title{عنوان}
+%\author{نویسنده}
+%\date{\today}
+
+\begin{document}
+%\maketitle
+
+\section{نمونه عنوان}
+
+
+\end{document}
+

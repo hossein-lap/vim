@@ -1,0 +1,73 @@
+%  _  _ ___    
+% | || | __|   H
+% | __ | _|    A
+% |_||_|___|   P
+%              
+
+\documentclass[12pt,a4paper]{article}
+
+% use package {{{
+% end use
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage[margin=1.33cm]{geometry}
+\usepackage{fontspec}
+%\usepackage{enumitem,amssymb}
+%\usepackage{pifont}
+%\usepackage{multicol}
+%\usepackage{listings}
+%}}}
+\newcommand{\code}[1]{\colorbox{backcolour}{\normalsize\texttt{ #1} }}
+\setmonofont{Source Code Pro}
+% code blocks {{{
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray}{gray}{0.5}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+% }}}
+% section formatting{{{
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+
+\titleformat{\section} {\Huge \bfseries}{}{0em}{}[{\titlerule[2pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+
+\titleformat{\subsection} {\Large \bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+\titleformat{\subsubsection} {\bfseries}{}{0em}{}
+\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
+% end formatting
+%}}}
+
+\title{TheTitle}
+\author{Author}
+\date{\today}
+
+
+
+% body {{{
+\begin{document}
+\maketitle
+
+%% section one{{{
+\section{Section one}
+\code{Test} is one of most important things
+
+%%% subsection one
+\subsection{Subsection one}
+Sample text
+
+%%%% subsubsection one
+\subsubsection{Subsubsection one}
+Sample text
+%}}}
+
+\end{document}
+% end body }}}
+

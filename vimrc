@@ -6,34 +6,44 @@
 "                                   "
 "" main section                     "
 source ~/.vim/main.vim
-set background=dark                 " use the dark theme
+autocmd FileType sh norm :set tabstop=2
+"nnoremap <leader>fe :!g++ %:r.cpp -o output<CR>
 "
 "" keybinding
 source ~/.vim/keybinds.vim
 "
 "" colorscheme                      "
-colorscheme molokai
+"colorscheme material
+"colorscheme 256_noir
+colorscheme minimalist
 "
-"" more color
-set termguicolors
-set autochdir
+"" term
+"set termguicolors
 "
 "" add ready-to-use text by .ext
 source ~/.vim/skels.vim
 "
 "" status line section
-"source ~/.vim/simplestatus.vim
+source ~/.vim/simplestatus.vim
 "source ~/.vim/status.vim
-source ~/.vim/gvimstatus.vim
 "
 "" compile section
-source ~/.vim/gcp.vim
-
+source ~/.vim/oldcp.vim
+"
 "" plugins
-source ~/.vi/extra.vim
+source ~/.vim/extra.vim
+source ~/.vim/ext.vim
 "
 ""
 "autocmd VimEnter * 20Lex<C-w><C-w>
 "
+source ~/.vim/Note.vim
+"
 "" nnn filemanager
 "source ~/.vim/nnn.vim
+"
+""
+source ~/.vim/vifm.vim
+"
+"" scpecial characters
+source ~/.vim/abreviation.vim
