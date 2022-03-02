@@ -279,7 +279,7 @@ I like and use `hybrid` colorscheme.
 
 #### C
 
-![vim-c](shots/vim-c-trans.png)
+![vim-c](shots/vim-c.png)
 
 #### C [gvim]
 
