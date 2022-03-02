@@ -67,6 +67,11 @@ au FileType markdown call MDownFill()
 "  Plug 'vim-scripts/fountain.vim'
 "  Plug 'tribela/vim-transparent'
 "call plug#end()
+"
+"""" Some more plugins:
+"""" Do not uncomment these here
+"""" You should put them between [call plug#XXX] first
+"
 ""  Plug 'ap/vim-css-color'               " Color previews for CSS
 ""  Plug 'vim-scripts/AutoComplPop'       " auto completion plugin
 ""  Plug 'itchyny/lightline.vim'          " Lightline statusbar
