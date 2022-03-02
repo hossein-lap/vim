@@ -104,7 +104,7 @@ function! NetrwOnBufferOpen()
 	call ToggleNetrw()
 endfun
 
-" Close Netrw if it's the only buffer open
+" Close Netrw if it's the only opened buffer
 autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
 
 " Make netrw act like a project Draw
