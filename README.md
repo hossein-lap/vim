@@ -38,11 +38,11 @@ One file for keybindings, another for
 statusline configs and so on.
 In each file, I have some kind of settings.
 
-### vimrc:
+### vimrc
 
 This is the init file which `vim` reads settings from this.
 And I source all my config files in it.
-Also there is a section, just an `if` statement to say:
+Also there is a section, just an `if` statement to say
 
 > if vim opened in a tty, set this colorscheme and do this
 
@@ -50,7 +50,7 @@ Also there is a section, just an `if` statement to say:
 
 > and if vim opened in a GUI mode [gvim typically] use this font, and this colorscheme
 
-### main.vim:
+### main.vim
 
 This file contains some of basic settings like
 
@@ -60,7 +60,7 @@ This file contains some of basic settings like
 - show status line
 - etc...
 
-### abreviation.vim:
+### abreviation.vim
 
 This is the fun part. I have three functions in this file.
 
@@ -75,12 +75,11 @@ and one for toggle between those two functions.
 
 The keybinding for toggling is `<space><space>c` in normal mode.
 
-### keybinds.vim:
+### keybinds.vim
 
 I keep most of my key mappings in this file.
-Thinks like:
+Thinks like
 
-- `<leader>ff` to execute `:20Lexplore<CR><C-w>w`
 - `<leader>ss` to execute `:setlocal spell!<CR>`
 - `<leader>se` to execute `:set spelllang=en_us<CR>`
 - `<C-p>` to execute `:set paste!`
@@ -95,7 +94,7 @@ See `keybinds.vim` file, line 8.
 let mapleader='\'      " change the <Leader> Key
 ```
 
-### skels.vim:
+### skels.vim
 
 If you want to set the leader key [or anything] to `,`
 note that I have `,` set to read some template files located in
@@ -109,11 +108,31 @@ for changing the `g:skelkey` which I it set to `,` by default.
 let g:skelkey=','
 ```
 
-### extra.vim:
+### netrw.vim
+
+Vim's built-in file manager `netrw` configs.
+
+contains some `autocmd`s for
+
+- Close netrw if it's the only opened buffer
+- Start netrw at startup
+	- To disable this functionality, simply set value `1` to the
+	`g:NetrwIsOpen` variable in this file:
+	```vim
+	" open netrw on startup (0 = on, 1 = off)
+	let g:NetrwIsOpen=1
+	```
+
+And functions for 
+
+- Toggle netrw
+- Refresh netrw to update the display
+
+### extra.vim
 
 This file, as you guess from it's name,
 have some extra settings and features enabled.
-Things like:
+Things like
 
 - Auto fill `{ } [ ] ( )`
     - Has a keybinding to enable/disable
@@ -125,11 +144,11 @@ Things like:
 - enable `filetype plugin` and `filetype indent`
 - also it has the `plugins`
 
-**Plugins:**
+#### Plugins
 
-**vim-plug is the plugin manager of my choice.**
+`vim-plug` **is the plugin manager of my choice.**
 
-Active plugins [requires `:PlugInstall` to install]:
+Active plugins [requires `:PlugInstall` to install]
 
 - 'Jorengarenar/miniSnip'
 - 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
@@ -137,36 +156,28 @@ Active plugins [requires `:PlugInstall` to install]:
 - 'lifepillar/vim-mucomplete'
 - also some plugins which are commented out ;)
 
-### oldcp.vim:
+### oldcp.vim
 
 This file is for compile/execute programs/scripts.
 
 That's all you need to know but, if want to, you can take a look ;)
 
-Syntax is like:
+Syntax is like
 
 ```vim
 autocmd FileType <File_type> nnoremap <Key_binding> :!<Command><CR>
 ```
 
-### {status,simplestatus}.vim:
+### {status,simplestatus}.vim
 
 This file[s] is just status line.
 
 I do not use a plugin for this. It's all just vim's built-in status line.
 
-### Other files:
+### Other files
 
-**Plugin configs:**
+#### Plugin configs
 
-1. latex-live-preview.vim
-1. minisnip.vim
-1. mucomplete.vim
-1. omnifunc.vim
-
-- `latex-live-preview.vim`
-    - set `zathura` as viewer
-    - set `xelatex` as latex engine
 - `minisnip.vim`
     - `<Ctrl-s><Ctrl-s>` to apply snippet
 - `vi.vim`
@@ -191,24 +202,48 @@ Wanna know what are those?!
 
 ```sh
 case $1 in
-    [yY]|[yY][eE][sS])
+    yes)
     echo "Keep reading ;)"
-    ;;
+		;;
     *)
     echo "Have a nice life, take care :*"
     exit 0
-    ;;
+		;;
 esac
 ```
 
 ### autoload/
 
-The `vim-plug` plugin manager live in this directory :)
+The `vim-plug` plugin manager lives in this directory :)
 
 ### colors/
 
 It is obvious right?
-It contains colorschemes :)))
+it contains colorschemes :)))
+
+#### Available colors
+
+1. 256_noir
+1. ayu
+1. codedark
+1. dalton
+1. deus
+1. fogbell
+1. genericdc-light
+1. gruvbox
+1. hybrid
+1. materialbox
+1. material
+1. minimalist
+1. molokai
+1. monokai_pro
+1. nord
+1. onehalf
+1. phoenix
+1. simple-dark
+1. solarized8
+1. sunbather
+1. xcode
 
 ### ftdetect/
 
@@ -238,43 +273,23 @@ guess now :)) it will keep the dictionary files here.
 This is where is keep my skeleton/template files, call them whatever you like
 I don't care XD
 
-**Available colors:**
-
-1. 256_noir
-1. ayu
-1. codedark
-1. dalton
-1. deus
-1. fogbell
-1. genericdc-light
-1. gruvbox
-1. hybrid
-1. materialbox
-1. material
-1. minimalist
-1. molokai
-1. monokai_pro
-1. nord
-1. onehalf
-1. phoenix
-1. simple-dark
-1. solarized8
-1. sunbather
-1. xcode
-
 ## Screenshots
 
 I like and use `hybrid` colorscheme.
 
-**c**
+#### C
 
 ![vim-c](shots/vim-c-trans.png)
 
-**c [gvim]**
+#### C [gvim]
 
 ![gvim-c](shots/gvim-c.png)
 
-**lua**
+#### Python
+
+![vim-python](shots/vim-python.png)
+
+#### Lua
 
 ![vim-lua](shots/vim-lua.png)
 
