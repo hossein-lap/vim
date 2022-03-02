@@ -20,8 +20,8 @@ if has("gui_running")
 :  set guifont=Source\ Code\ Pro\ 14
 :  source ~/.vim/simplestatus.vim
 "  set guifont=Vazir\ Code\ Hack\ Extra\ Height\ 13
-"  set go-=m
-"  set go-=T
+:  set go-=m
+:  set go-=T
 "  set go-=r
 "  set guioptions-=!
 "  set guioptions-=i

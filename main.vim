@@ -23,7 +23,7 @@ set autochdir             " change current dir to file's dir
 "
 "" tab settings
 set tabstop=4             " tap size in this case is (2)
-set expandtab             " insert spaces instead of tab
+set noexpandtab           " do not insert spaces instead of tab
 set shiftwidth=4          " 
 set softtabstop=4         " 
 "
@@ -99,6 +99,6 @@ set splitright
 ""
 set hidden
 set list
-set listchars=tab:¦\·,trail:\ ,lead:⋅ ",lead:\  "
+set listchars=tab:¦\ ,trail:\ ,lead:⋅ ",lead:\  "·
 	
   "Think   asdf    
