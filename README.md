@@ -20,7 +20,9 @@ else
     echo "Have fun and goodbye :*"
     exit 0
 fi
+```
 
+```sh
 for questions in ${mind}
 do
     echo ${questions} 
