@@ -1,14 +1,15 @@
-//   _  _ ___    
-//  | || | __|   H
-//  | __ | _|    A
-//  |_||_|___|   P
-//
+/*   _  _ ___
+ *  | || | __|   H
+ *  | __ | _|    A
+ *  |_||_|___|   P
+ */
 
 #include <stdio.h>
 
-int main(void) {
-
-    printf("Hello world!\n");
-
-    return 0;
+int main(int argc, char *argv[])
+{
+	printf("Hello world!\n");
+	int i = getchar();
+	printf("%c\n", i);
+	return 0;
 }

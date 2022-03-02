@@ -1,44 +1,44 @@
 " ==============================================================================
-"   Name:        One Half Dark
+"   Name:        One Half Light
 "   Author:      Son A. Pham <sp@sonpham.me>
 "   Url:         https://github.com/sonph/onehalf
 "   License:     The MIT License (MIT)
 "
-"   A dark vim color scheme based on Atom's One. See github.com/sonph/onehalf
-"   for installation instructions, a light color scheme, versions for other
+"   A light vim color scheme based on Atom's One. See github.com/sonph/onehalf
+"   for installation instructions, a dark color scheme, versions for other
 "   editors/terminals, and a matching theme for vim-airline.
 " ==============================================================================
 
-set background=dark
+set background=light
 highlight clear
 syntax reset
 
-let g:colors_name="onehalfdark"
-let colors_name="onehalfdark"
+let g:colors_name="onehalflight"
+let colors_name="onehalflight"
 
 
-let s:black       = { "gui": "#282c34", "cterm": "236" }
-let s:red         = { "gui": "#e06c75", "cterm": "168" }
-let s:green       = { "gui": "#98c379", "cterm": "114" }
-let s:yellow      = { "gui": "#e5c07b", "cterm": "180" }
-let s:blue        = { "gui": "#61afef", "cterm": "75"  }
-let s:purple      = { "gui": "#c678dd", "cterm": "176" }
-let s:cyan        = { "gui": "#56b6c2", "cterm": "73"  }
-let s:white       = { "gui": "#dcdfe4", "cterm": "188" }
+let s:black       = { "gui": "#383a42", "cterm": "237" }
+let s:red         = { "gui": "#e45649", "cterm": "167" }
+let s:green       = { "gui": "#50a14f", "cterm": "71" }
+let s:yellow      = { "gui": "#c18401", "cterm": "136" }
+let s:blue        = { "gui": "#0184bc", "cterm": "31" }
+let s:purple      = { "gui": "#a626a4", "cterm": "127" }
+let s:cyan        = { "gui": "#0997b3", "cterm": "31" }
+let s:white       = { "gui": "#fafafa", "cterm": "231" }
 
-let s:fg          = s:white
-let s:bg          = s:black
+let s:fg          = s:black
+let s:bg          = s:white
 
-let s:comment_fg  = { "gui": "#5c6370", "cterm": "241" }
-let s:gutter_bg   = { "gui": "#282c34", "cterm": "236" }
-let s:gutter_fg   = { "gui": "#919baa", "cterm": "247" }
-let s:non_text    = { "gui": "#373C45", "cterm": "239" }
+let s:comment_fg  = { "gui": "#a0a1a7", "cterm": "247" }
+let s:gutter_bg   = { "gui": "#fafafa", "cterm": "231" }
+let s:gutter_fg   = { "gui": "#d4d4d4", "cterm": "252" }
+let s:non_text    = { "gui": "#e5e5e5", "cterm": "252" }
 
-let s:cursor_line = { "gui": "#313640", "cterm": "237" }
-let s:color_col   = { "gui": "#313640", "cterm": "237" }
+let s:cursor_line = { "gui": "#f0f0f0", "cterm": "255" }
+let s:color_col   = { "gui": "#f0f0f0", "cterm": "255" }
 
-let s:selection   = { "gui": "#474e5d", "cterm": "239" }
-let s:vertsplit   = { "gui": "#313640", "cterm": "237" }
+let s:selection   = { "gui": "#bfceff", "cterm": "153" }
+let s:vertsplit   = { "gui": "#f0f0f0", "cterm": "255" }
 
 
 function! s:h(group, fg, bg, attr)
@@ -84,10 +84,10 @@ call s:h("MoreMsg", s:fg, "", "")
 call s:h("WarningMsg", s:red, "", "")
 call s:h("Question", s:purple, "", "")
 
-call s:h("Pmenu", s:bg, s:fg, "")
-call s:h("PmenuSel", s:fg, s:blue, "")
-call s:h("PmenuSbar", "", s:selection, "")
-call s:h("PmenuThumb", "", s:fg, "")
+call s:h("Pmenu", s:fg, s:cursor_line, "")
+call s:h("PmenuSel", s:bg, s:blue, "")
+call s:h("PmenuSbar", "", s:cursor_line, "")
+call s:h("PmenuThumb", "", s:comment_fg, "")
 
 call s:h("SpellBad", s:red, "", "")
 call s:h("SpellCap", s:yellow, "", "")

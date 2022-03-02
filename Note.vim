@@ -4,4 +4,4 @@
 " |_||_|___|   P
 "              
 
-autocmd! BufWritePost *note_*.ms silent !NoteBuild.sh %:p
+autocmd! BufWritePost *note_*.md silent !NoteBuild.sh %:p

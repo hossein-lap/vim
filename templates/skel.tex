@@ -1,73 +1,157 @@
-%  _  _ ___    
-% | || | __|   H
-% | __ | _|    A
-% |_||_|___|   P
-%              
-
 \documentclass[12pt,a4paper]{article}
 
-% use package {{{
-% end use
+% Preambles {{{ 
+\usepackage[margin=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem,amssymb}
+\usepackage{multicol}
+\usepackage{listings}
 \usepackage{titlesec}
 \usepackage{titling}
-\usepackage{xcolor}
-\usepackage[margin=1.33cm]{geometry}
-\usepackage{fontspec}
-%\usepackage{enumitem,amssymb}
-%\usepackage{pifont}
-%\usepackage{multicol}
-%\usepackage{listings}
-%}}}
-\newcommand{\code}[1]{\colorbox{backcolour}{\normalsize\texttt{ #1} }}
-\setmonofont{Source Code Pro}
-% code blocks {{{
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\definecolor{mygray}{gray}{0.5}
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{hyperref}
+\usepackage{setspace}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={black!70!white},
+    urlcolor={blue!70!green},
+    pdftitle={ncurses},
+}
 % }}}
-% section formatting{{{
-\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+%% Formatting {{{
+%% Section {{{ 
+%\titleformat{\part}{\huge\bfseries}{}{1em}{}
+%
+%\titleformat{\section} {\Large\bfseries}{}{0em}{}[{\titlerule[2pt]}]
+%\titlespacing{\section}{0pt}{3mm}{7mm}
+%
+%\titleformat{\subsection} {\large\bfseries}{}{0em}{}[{\titlerule[1pt]}]
+%\titlespacing{\subsection}{0pt}{7pt}{7pt}
+%
+%\titleformat{\subsubsection} {\bfseries}{}{0em}{}
+%\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
+%
+%% }}}
+%\setlength{\parindent}{0mm}
+%\setlength{\headheight}{13pt}
+%\onehalfspacing
+%% }}}
+%% Ubuntu Font Family {{{ 
+%\newfontfamily\Ubfam{Ubuntu}[
+%Path            =   /home/prime/.fonts/ubuntu/,
+%Extension       =   .ttf,
+%UprightFont     =   *-R,
+%BoldFont        =   *-M,
+%ItalicFont      =   *-RI,
+%BoldItalicFont  =   *-MI,
+%SmallCapsFont   =   *-C,
+%%SlantedFont     =   *-Th,
+%%BoldSlantedFont =   *-,
+%]
+%\setmainfont{Ubuntu}
+%\setmonofont{UbuntuMono-Regular}
+%% }}}
+%%% {{{ color definition 
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{mygray}{gray}{0.5}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+%\definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
+%\definecolor{commentsColor}{rgb}{0.497495, 0.497587, 0.497464}
+%\definecolor{keywordsColor}{rgb}{0.000000, 0.000000, 0.635294}
+%\definecolor{stringColor}{rgb}{0.558215, 0.000000, 0.135316}
+%\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+%\definecolor{frenchbeige}{rgb}{0.65, 0.48, 0.36}
+%\definecolor{beaver}{rgb}{0.62, 0.51, 0.44}
+%%
+%%%\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+%%%\definecolor{lavenderpurple}{rgb}{0.59, 0.48, 0.71}
+%%%\definecolor{lavenderfloral}{rgb}{0.71, 0.49, 0.86}
+%%%\definecolor{goldmetallic}{rgb}{0.83, 0.69, 0.22}
+%%
+%%%\definecolor{onyx}{rgb}{0.66, 0.66, 0.66}
+%%%\definecolor{grullo}{rgb}{0.66, 0.6, 0.53}
+%%% }}}
+%% global code-block formatting {{{
+%\lstset{frame=tb,
+%  language=c,
+%  showstringspaces=false,
+%  columns=flexible,
+%  basicstyle={\ttfamily\normalsize},
+%  numbers=left,
+%  stringstyle={\bfseries},
+%%  morekeywords={True, False,},
+%%  keywordstyle={\color{codepurple}},
+%%  commentstyle={\color{frenchbeige}},
+%%  stringstyle={\color{alizarin}},
+%%  keywordstyle={\color{codepurple}},
+%%  ndkeywordstyle={\ttfamily\color{keywordsColor}},
+%%  emph={ls},
+%%  emphstyle={\color{red}},
+%  xleftmargin=.05\textwidth,
+%  xrightmargin=.05\textwidth,
+%  backgroundcolor=\color{white!96!black},
+%  commentstyle={\color{commentsColor}},
+%  emph={printf, fprintf, scanf, fscanf},
+%  emphstyle={\ttfamily},
+%  rulecolor=\color{white!96!black},
+%  breaklines=true,
+%  breakatwhitespace=false,
+%  numbersep=3mm,
+%  frame=left top right bottom,
+%%  caption=\code{e.g.},
+%%  frame=shadowbox,
+%%  frame=none,
+%%
+%  aboveskip=5mm,
+%  belowskip=2mm,
+%  captionpos=t,
+%  numberstyle={\ttfamily\footnotesize\color{mygray}},
+%  tabsize=8
+%%
+%%
+%%
+%}
+%% end code block formatting }}}
+%% Macros {{{ 
+%% centered text box {{{ 
+%\newcommand{\header}[1] {
+%    \begin{center}
+%        \fbox{\textsc{#1}} \\
+%    \end{center}
+%}
+%% }}}
+%% in-line code {{{ 
+%\newcommand{\code}[1]{\colorbox{backcolour}{\ttfamily #1}}
+%% }}}
+%% }}}
 
-\titleformat{\section} {\Huge \bfseries}{}{0em}{}[{\titlerule[2pt]}]
-\titlespacing{\section}{0pt}{3pt}{7pt}
+%% Persian font {{{
+%\usepackage{xepersian}
+%\settextfont{Yas}
+%\ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \ExplSyntaxOff
+%
+%\defpersianfont\nast{IranNastaliq}
+%\defpersianfont\titre{XB Titre}
+%\defpersianfont\khali{XB Kayhan Sayeh}
+%\defpersianfont\yekan{XM Yekan}
+%% }}}
+%% Title {{{ 
+%\title{}
+%\author{}
+%\date{}
+%% }}}
 
-\titleformat{\subsection} {\Large \bfseries}{}{0em}{}
-\titlespacing{\subsection}{0pt}{7pt}{7pt}
-
-\titleformat{\subsubsection} {\bfseries}{}{0em}{}
-\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
-% end formatting
-%}}}
-
-\title{TheTitle}
-\author{Author}
-\date{\today}
-
-
-
-% body {{{
 \begin{document}
-\maketitle
+%% Beginning {{{
+%\pagenumbering{roman}
+%\maketitle
+%\vspace{4cm}
+%\tableofcontents
+%\vfill\newpage
+%% }}}
+%\begin{Ubfam}
 
-%% section one{{{
-\section{Section one}
-\code{Test} is one of most important things
-
-%%% subsection one
-\subsection{Subsection one}
-Sample text
-
-%%%% subsubsection one
-\subsubsection{Subsubsection one}
-Sample text
-%}}}
-
+%\end{Ubfam}
 \end{document}
-% end body }}}
-

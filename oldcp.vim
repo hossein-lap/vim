@@ -4,10 +4,15 @@
 " |_||_|___|   P
 "              
 "
-" Global section with Makefile {{{
-autocmd FileType * nnoremap <leader>cc :!make<CR>
-"autocmd FileType * nnoremap <leader>fw :!make clean<CR>
-"autocmd FileType * nnoremap <leader>fq :!make force<CR>
+" Global Section: {{{
+" Makefile:
+au FileType * nnoremap <leader>cc :!make<CR>
+au FileType * nnoremap <leader>cx :!make force<CR>
+" Git:
+au FileType * nnoremap <leader>gs :!git status -s<CR>
+au FileType * nnoremap <leader>gl :!git log --oneline --stat --graph --all<CR>
+au FileType * nnoremap <leader>ga :!git add %<CR>
+au FileType * nnoremap <leader>gc :!git commit<CR>
 " }}}
 "
 " C++ section {{{
@@ -34,32 +39,29 @@ autocmd FileType c nnoremap <leader>fq :!gcc %:r.c && ./%:r<CR>
 autocmd Filetype tex nnoremap <leader>fe :!xelatex %:r.tex<CR>
 " }}}
 " groff section {{{
-"" ms macro to pdf
-autocmd Filetype nroff nnoremap <leader>fe :!groff -ms -Tpdf %:r.ms > %:r.pdf<CR>
+"" mspdf macro to pdf
+autocmd Filetype nroff nnoremap <leader>fe :!groff -mspdf -Tpdf %:r.ms > %:r.pdf<CR>
 " }}}
 " markdown section {{{
 "" markdown to pdf via pandoc
 "autocmd Filetype markdown nnoremap <leader>fe :!pandoc %:r.md -o %:r.pdf<CR>
-autocmd Filetype markdown nnoremap <leader>fe :!mdp %<CR>
+autocmd Filetype markdown,vimwiki nnoremap <leader>fe :!glow -p %<CR>
+autocmd Filetype markdown,vimwiki nnoremap <leader>fw :!mdp %<CR>
 " }}}
-"
 " sent section {{{
-autocmd Filetype text nnoremap <leader>fe :!sent -f FiraCode %<CR>
+autocmd Filetype text nnoremap <leader>fe :!sent -f 'CMU Serif' % &<CR>
 " }}}
 "
 " folding section {{{
-" save via zs
+"" save via zs
 autocmd Filetype *  nnoremap zs :mkview<CR>  
-" restore via zr
+"" restore via zr
 autocmd Filetype *  nnoremap zr :loadview<CR>
 " }}}
 "
 " execute Python programs {{{
-autocmd FileType python nnoremap <leader>fe :!xterm -T RunPrompt -e 'python %:r.py ; echo "" ; read -p "Press Enter to Exit" dumppvarr'<CR><CR>
+autocmd FileType python nnoremap <leader>fe :!python3 %:r.py<CR>
 " }}}
-" bash section {{{
-" run via bash
-autocmd Filetype sh nnoremap <leader>fe :!bash %<CR>
-" run via dash
-autocmd Filetype sh nnoremap <leader>fe :!dash %<CR>
+" execute Lua programs {{{
+autocmd FileType lua nnoremap <leader>fe :!lua5.4 %:r.lua<CR>
 " }}}

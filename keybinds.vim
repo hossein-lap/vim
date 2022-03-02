@@ -1,8 +1,8 @@
-"  _  _ ___    
+"  _  _ ___
 " | || | __|   H
 " | __ | _|    A
 " |_||_|___|   P
-"              
+"
 "
 "" <Leader> key section
 let mapleader='\'      " change the <Leader> Key
@@ -18,7 +18,7 @@ noremap <silent> _ :tabprevious<CR>
 nmap <C-P> :set paste!<CR>
 "
 "" netrw toggle
-nmap <Leader>ff  :20Lexplore<CR><C-w>w
+nmap <Leader>ff  :24Lexplore<CR><C-w>w
 "
 "" toggle ltr support
 nmap <leader>bd   :set termbidi!<CR>
@@ -30,9 +30,10 @@ nmap <C-k>  <C-w>k
 nmap <C-l>  <C-w>l
 "
 "" spelling check
-map <leader>se  :setlocal spell! spelllang=en_us<CR>
-map <leader>sf  :setlocal spell! spelllang=fr<CR>
-"map <leader>sf  :set spelllang=fr<CR>
+map <leader>ss  :setlocal spell!<CR>
+map <leader>se  :set spelllang=en_us<CR>
+map <leader>sf  :set spelllang=fr<CR>
+map <leader>sd  :set spelllang=da<CR>
 "
 "" force save exit multi panes
 "map <Leader>zz    :xa!<CR>
@@ -46,5 +47,13 @@ map Q gqq
 "" use control-c instead of escape
 nmap <C-c> <Esc>
 "
-"" save readonly files with sudo tee
-cmap w!! w !sudo tee % > /dev/null
+"" force write to file
+cmap W w!
+"
+"" saving read-only files using sudo tee
+cmap WW w !doas tee % > /dev/null
+
+"" Completion:
+" Spell:
+imap <C-z> <C-x><C-s>
+

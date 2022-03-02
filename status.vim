@@ -3,7 +3,7 @@
 " | __ | _|    A
 " |_||_|___|   P
 "                                                
-"                                  "             
+"                                  "             {{{
 """ status line drafts -used to be functions- {{{
 "" git status function
 ""
@@ -107,30 +107,30 @@ let g:currentmode={
 ""
 "" }}}
 "
-"" config section {{{
-set laststatus=2                                           " show status line
-set statusline=                                            " status line config
-set statusline+=%#StatusLine#                              " color-scheme
-set statusline+=%4*\ %{toupper(g:currentmode[mode()])}\    " The current mode
-set statusline+=\»\                                        " blank space
-"set statusline+=%3*\ \(                                    " blank space
-"set statusline+=%{StatuslineGitBranch()}                   " git brunch in current directory
-"set statusline+=%{StatuslineGit()}                         " git brunch in current directory
-"set statusline+=%3*\)                                      " blank space
-set statusline+=%2*\ %<%F\                                 " Full path
-set statusline+=%5*\ %m                                    " blank space
-set statusline+=%5*\ %r                                    " blank space
-set statusline+=%=                                         " Switch to the right side
-set statusline+=%3*\ %c                                    " cursor current position
-set statusline+=%3*\ \|\                                   " blank space
-set statusline+=%3*%l\/%L\                                 " blank space
-set statusline+=%3*\|                                      " blank space
-set statusline+=%3*\ \-%Y\-\                               " file type
-set statusline+=%1*\ \«                                    " blank space
-set statusline+=\                                          " blank space
-set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
-set statusline+=\                                          " blank space
-"" }}}
+""" config section {{{
+"set laststatus=2                                           " show status line
+"set statusline=                                            " status line config
+"set statusline+=%#StatusLine#                              " color-scheme
+"set statusline+=%4*\ %{toupper(g:currentmode[mode()])}\    " The current mode
+"set statusline+=\»\                                        " blank space
+""set statusline+=%3*\ \(                                    " blank space
+""set statusline+=%{StatuslineGitBranch()}                   " git brunch in current directory
+""set statusline+=%{StatuslineGit()}                         " git brunch in current directory
+""set statusline+=%3*\)                                      " blank space
+"set statusline+=%2*\ %<%F\                                 " Full path
+"set statusline+=%5*\ %m                                    " blank space
+"set statusline+=%5*\ %r                                    " blank space
+"set statusline+=%=                                         " Switch to the right side
+"set statusline+=%3*\ %c                                    " cursor current position
+"set statusline+=%3*\ \|\                                   " blank space
+"set statusline+=%3*%l\/%L\                                 " blank space
+"set statusline+=%3*\|                                      " blank space
+"set statusline+=%3*\ \-%Y\-\                               " file type
+"set statusline+=%1*\ \«                                    " blank space
+"set statusline+=\                                          " blank space
+"set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
+"set statusline+=\                                          " blank space
+""" }}}
 "" statusline colors{{{
 ""
 " " pink-black
@@ -215,21 +215,53 @@ set statusline+=\                                          " blank space
 "hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 "
-"hi User1 ctermfg=232 ctermbg=167 guifg=#000000 guibg=#fb4943
-"hi User1 ctermfg=232 ctermbg=119 guifg=#000000 guibg=#87ff5f
-"hi User1 ctermfg=232 ctermbg=208 guifg=#000000 guibg=#ff8700
-"hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc
-"hi User3 ctermfg=168 ctermbg=232 guifg=#d75f87 guibg=#000000
-"hi User3 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#000000
-"hi User3 ctermfg=119 ctermbg=232 guifg=#87ff5f guibg=#000000
-"hi User3 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000
-"hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#121212
+"hi User1 ctermfg=232 ctermbg=208 guifg=#000000 guibg=#ff8700 "cterm=bold gui=bold
+"hi User4 ctermfg=208 ctermbg=232 guifg=#ff8700 guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermbg=015 ctermfg=232 guibg=#f1f1f1 guifg=#121212 "cterm=bold gui=bold
+"hi User4 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#121212 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=119 guifg=#000000 guibg=#87ff5f "cterm=bold gui=bold
+"hi User4 ctermfg=119 ctermbg=232 guifg=#87ff5f guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=168 guifg=#000000 guibg=#d75f87 "cterm=bold gui=bold
+"hi User4 ctermfg=168 ctermbg=232 guifg=#d75f87 guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=167 guifg=#000000 guibg=#fb4943 "cterm=bold gui=bold
+"hi User4 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
 "}}}
-" "
-hi User1 ctermfg=232 ctermbg=168 guifg=#000000 guibg=#d75f87
-hi User3 ctermfg=208 ctermbg=232 guifg=#ff8700 guibg=#000000
-hi User2 ctermfg=243 ctermbg=232 guifg=#989898 guibg=#121212
-"hi User4 ctermfg=119 ctermbg=232 guifg=#87ff5f guibg=#000000
-hi User4 ctermbg=232 ctermfg=168 guibg=#000000 guifg=#d75f87
-hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#121212
+" "}}}
+"" used one {{{
+"hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc cterm=bold gui=bold
+"hi User4 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#000000 cterm=bold gui=bold
+"hi User3 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
+"hi User2 ctermfg=243 ctermbg=232 guifg=#989898 guibg=#000000 "cterm=bold gui=bold
+"hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#000000 "cterm=bold gui=bold
+"" }}}
+"
+"
+hi User1 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 "cterm=bold gui=bold
+hi User2 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
 
+"set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ Normal\ ':''}
+"set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ Insert\ ':''}
+"set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ Replace\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ Visual\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='V')?'\ \ V-Line\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='CTRL-v')?'\ \ V-Block\ ':''}
+
+"" current config section {{{
+set laststatus=2                                           " show status line
+set statusline=                                            " status line config
+set statusline+=%2*\ %{toupper(g:currentmode[mode()])}\    " The current mode
+set statusline+=\»\                                        " blank space
+set statusline+=%1*\ %<%F\                                 " Full path
+set statusline+=%1*\ %m                                    " blank space
+set statusline+=%1*\ %r                                    " blank space
+set statusline+=%=                                         " Switch to the right side
+set statusline+=%1*\ %c                                    " cursor current position
+set statusline+=%1*\ \|\                                   " blank space
+set statusline+=%1*%l\/%L\                                 " blank space
+set statusline+=%1*\|                                      " blank space
+set statusline+=%1*\ \-%Y\-\                               " file type
+set statusline+=%2*\ \«                                    " blank space
+set statusline+=\                                          " blank space
+set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
+set statusline+=\                                          " blank space
+"" }}}

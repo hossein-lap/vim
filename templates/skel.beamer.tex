@@ -1,0 +1,103 @@
+\documentclass{beamer}
+
+%% themes {{{ 
+%\usetheme{metropolis}
+%\usetheme{Warsaw}
+%\usetheme{Copenhagen}
+%\usetheme{Singapore}
+%\usetheme{Rochester}
+%\usetheme{Hannover}
+%\usetheme{Frankfurt}
+%% }}}
+%% colorschemes {{{
+%\usecolortheme{beaver}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{crane}
+%\usecolortheme{spruce}
+%% }}}
+
+%% custom theme {{{ 
+%\usetheme{Hannover}
+%\definecolor{mygreen}{rgb}{.125,.5,.25}
+%\usecolortheme[named=mygreen]{structure}
+%% }}}
+%% custom colorscheme {{{ 
+%\usetheme{Singapore}
+%\definecolor{mygreen}{rgb}{.125,.5,.25}
+%\usecolortheme[named=mygreen]{structure}
+%% }}}
+
+% metropolis theme customization {{{ 
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{seahorse}
+\setbeamercolor{background canvas}{bg=white}
+% }}}
+
+% First Page {{{ 
+\title[Beamer]{a Beamer template}
+\subtitle{Subtitle here}
+\author{ThePrimeJade}
+\institute{\large \textbf{Bold text}: \\[6pt] Text one}
+\date{}
+% }}}
+
+\begin{document}
+\begin{frame}
+    \maketitle
+\end{frame}
+
+% columns and items {{{
+\begin{frame}[t]{Columns and items} \vspace{2mm}
+a simple line
+    \begin{columns}
+        \begin{column}[]{.5\textwidth}
+            \begin{block}{simple block of items}
+                \begin{itemize}
+                    \item first itemize
+                \end{itemize}
+                \begin{enumerate}
+                    \item first enumerate
+                \end{enumerate}
+                \begin{description}
+                    \item[-] description
+                \end{description}
+            \end{block}
+            \vspace{2em}
+    Outside of a block inside column
+        \end{column}
+
+        \begin{column}[]{.5\textwidth}
+            One Single Column
+        \end{column}
+    \end{columns}
+\end{frame}
+% }}}
+% blocks {{{ 
+\begin{frame}[t]{Blocks and Items} \vspace{2mm}
+
+    \begin{exampleblock}{Example block}
+        This is the scond block
+    \end{exampleblock}
+
+    \begin{theorem}{Theorem block}
+        It's in {\LaTeX} so it must be true $ a^2 + b^2 = c^2$.
+    \end{theorem}
+%    \begin{corollary}
+%        a = b
+%    \end{corollary}
+%    \begin{proof}
+%        a + b = b + c
+%    \end{proof}
+
+    \begin{alertblock}{Alert block}
+        This is the third block
+    \end{alertblock}
+\end{frame}
+% }}}
+
+\end{document}
