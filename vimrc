@@ -16,12 +16,12 @@ if has("gui_running")
 :  set background=light
 :  set termguicolors
 :  set hlsearch
-:  source ~/.vim/gextra.vim
-:  set guifont=Source\ Code\ Pro\ 14
 :  source ~/.vim/simplestatus.vim
+:  set guifont=Source\ Code\ Pro\ Medium\ 14
 "  set guifont=Vazir\ Code\ Hack\ Extra\ Height\ 13
-:  set go-=m
-:  set go-=T
+"  source ~/.vim/gextra.vim
+"  set go-=m
+"  set go-=T
 "  set go-=r
 "  set guioptions-=!
 "  set guioptions-=i
@@ -29,16 +29,16 @@ if has("gui_running")
 "  set guioptions-=e
 "  set guipty
 "  set gtl=2
-"  nmap <C-=>- :call FontSizeMinus()<CR>
-"  nmap <C-=>= :call FontSizePlus()<CR>
+:  nmap <C-=>- :call FontSizeMinus()<CR>
+:  nmap <C-=>= :call FontSizePlus()<CR>
 elseif empty($DISPLAY)
-    " TTY
-    colorscheme industry
-    set nocursorline
+:   " TTY
+:   colorscheme industry
+:   set nocursorline
 else
 :  colorscheme hybrid
-:  source ~/.vim/extra.vim
 :  source ~/.vim/simplestatus.vim
+"  source ~/.vim/extra.vim
 endif
 
 "if has("unix")
@@ -92,3 +92,6 @@ source ~/.vim/abreviation.vim
 "
 "" define sent filetype
 au FileType sent source ~/.vim/sent.vim
+"
+"" add some extra features + plugins (commented out)
+source ~/.vim/extra.vim
