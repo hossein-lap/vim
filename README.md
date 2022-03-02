@@ -7,17 +7,17 @@ in GUI, Terminal and tty in this setup.
 
 - Terminal
     - colorscheme: hybrid [dark]
-- tty
+- TTY
     - colorscheme: industry
 - GUI [gvim/vim-gtk3]
-    - font: Liberation Mono
+    - font: Souce Code Pro Medium 14
     - colorscheme: hybrid_material [light]
 
 ```sh
 if [[ ! -z "${questions}" ]]; then
     echo "Keep reading ;)"
 else
-    echo "Have fun and goodbye :*"
+    echo "Have fun and goodbye <3"
     exit 0
 fi
 ```
@@ -132,7 +132,7 @@ And functions for
 
 This file, as you guess from it's name,
 have some extra settings and features enabled.
-Things like
+Things like:
 
 - Auto fill `{ } [ ] ( )`
     - Has a keybinding to enable/disable
@@ -146,7 +146,7 @@ Things like
 
 #### Plugins
 
-`vim-plug` **is the plugin manager of my choice.**
+`vim-plug` **is my favorate plugin manager.**
 
 Active plugins [requires `:PlugInstall` to install]
 
@@ -176,10 +176,6 @@ I do not use a plugin for this. It's all just vim's built-in status line.
 
 ### Other files
 
-#### Plugin configs
-
-- `minisnip.vim`
-    - `<Ctrl-s><Ctrl-s>` to apply snippet
 - `vi.vim`
     - It is a very very lightweight config file
     - It is not using any plugins
@@ -187,6 +183,10 @@ I do not use a plugin for this. It's all just vim's built-in status line.
     - I did not included it in `vimrc` file
     - Give it a try: `vim -u $PWD/vi.vim ~/.bashrc`
 
+#### Plugin configs
+
+- `minisnip.vim`
+    - `<Ctrl-s><Ctrl-s>` to apply snippet
 
 There is another file called `Note.vim`,
 this file is to use with two scripts `NoteMarkdown.sh` and `NoteBuild.sh`
@@ -206,7 +206,7 @@ case $1 in
     echo "Keep reading ;)"
 		;;
     *)
-    echo "Have a nice life, take care :*"
+    echo "Have a nice life, take care <3"
     exit 0
 		;;
 esac
@@ -275,7 +275,7 @@ I don't care XD
 
 ## Screenshots
 
-I like and use `hybrid` colorscheme.
+I like and use `hybrid` colorschemes.
 
 #### C
 
