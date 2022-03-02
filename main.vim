@@ -99,6 +99,7 @@ set splitright
 ""
 set hidden
 set list
-set listchars=tab:¦\ ,trail:\ ,lead:⋅ ",lead:\  "·
+set listchars=tab:¦\ ,trail:\ 
+"  lead: ,lead:⋅ ·
 	
   "Think   asdf    
