@@ -97,4 +97,4 @@ au FileType sent source ~/.vim/sent.vim
 source ~/.vim/extra.vim
 "
 "" minisnippet plugin configs
-"source ~/.vim/minisnip.vim
+source ~/.vim/snippet.vim
