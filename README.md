@@ -212,11 +212,11 @@ case $1 in
 esac
 ```
 
-### autoload/
+### autoload
 
 The `vim-plug` plugin manager lives in this directory :)
 
-### colors/
+### colors
 
 It is obvious right?
 it contains colorschemes :)))
@@ -245,7 +245,7 @@ it contains colorschemes :)))
 1. sunbather
 1. xcode
 
-### ftdetect/
+### ftdetect
 
 Oh this one! I wrote a very small syntax highlighter
 [about 5 line of code in total XD] for files with `.sent` extension.
@@ -255,20 +255,20 @@ In this directory, basically I told vim
 
 And in sent.vim file, I defined the color scheme [just has 3 or 4 lines, nothing serious]
 
-### miniSnip/
+### miniSnip
 
 Custom snippets written by me to use it with `minisnip` plugin
 
-### plugged/
+### plugged
 
 All the plugins will be stored [installed] here.
 
-### spell/
+### spell
 
 If you install a new dictionary [which vim needs to download it]
 guess now :)) it will keep the dictionary files here.
 
-### templates/
+### templates
 
 This is where is keep my skeleton/template files, call them whatever you like
 I don't care XD
