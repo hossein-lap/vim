@@ -1,8 +1,4 @@
-"   _  _ ___
-"  | || | __|   H
-"  | __ | _|    A
-"  |_||_|___|   P
-"
+"" Main Settings:
 "
 set number                       " show numbers in the left
 set nowrap                       " disable line wraping
@@ -71,16 +67,6 @@ autocmd FileType haskell,lua          let b:comment_leader = '--'
 autocmd FileType tex,plaintex         let b:comment_leader = '%'
 autocmd FileType nroff                let b:comment_leader = '\"'
 "
-""  netrw config
-"let g:netrw_alto        = 0
-let g:netrw_banner       = 0
-let g:netrw_liststyle    = 3
-let g:netrw_browse_split = 4
-let g:netrw_winsize      = 80
-let g:netrw_preview      = 2
-let g:netrw_menu         = 1
-let g:netrw_altv         = 1
-"
 "" split char
 set fillchars+=vert:\|
 "
@@ -99,7 +85,8 @@ set splitright
 ""
 set hidden
 set list
-set listchars=tab:¦\ ,trail:\ 
-"  lead: ,lead:⋅ ·
-	
+set listchars=tab:¦\ ,lead:·,trail:⋅
+"  lead:  ·
+		
+"       test
   "Think   asdf    
