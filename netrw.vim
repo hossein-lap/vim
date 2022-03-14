@@ -1,19 +1,19 @@
-"  netrw section
+"" Netrw Section:
 " open netrw on startup (0 = on, 1 = off)
-let g:NetrwIsOpen=1
+let g:NetrwIsOpen=0
 "
-let g:netrw_banner       = 0
-let g:netrw_liststyle    = 3
+let g:netrw_banner		 = 0
+let g:netrw_liststyle	 = 3
 let g:netrw_browse_split = 4
-let g:netrw_winsize      = 25
-let g:netrw_menu         = 1
-let g:netrw_altv         = 1
-let g:netrw_cursor       = 4
-let g:netrw_fastbrowse   = 2
-let g:netrw_sort_by      = "exten"
-"let g:netrw_preview      = 1
-"let g:netrw_alto         = 0
-"let g:netrw_keepdir      = 0
+let g:netrw_winsize		 = 25
+let g:netrw_menu		 = 1
+let g:netrw_altv		 = 1
+let g:netrw_cursor		 = 4
+let g:netrw_fastbrowse	 = 2
+let g:netrw_sort_by		 = "exten"
+"let g:netrw_preview	  = 1
+"let g:netrw_alto		  = 0
+"let g:netrw_keepdir	  = 0
 "
 "
 "" split char
@@ -25,7 +25,7 @@ noremap <silent> <leader>fe :call RefreshNetrw()<CR>
 "au BufWritePost buffer silent call RefreshNetrw()<CR>
 "au BufWritePost *.md silent :!bash markdown-create.sh %:p %:p:r.htm
 
-" Netrw key mapping {{{
+" Netrw keymap functions {{{
 function! OpenToRight()
 	:normal v
 	let g:path=expand('%:p')
@@ -56,12 +56,6 @@ function! NetrwMappings()
 		noremap <buffer> T :call OpenTab()<cr>
 endfunction
 
-augroup netrw_mappings
-		autocmd!
-		autocmd filetype netrw call NetrwMappings()
-augroup END
-"}}}
-"
 " Allow for netrw to be toggled
 function! ToggleNetrw()
 	if g:NetrwIsOpen
@@ -91,7 +85,7 @@ function! RefreshNetrw()
 			let i-=1
 		endwhile
 		let g:NetrwIsOpen=0
-        call ToggleNetrw()
+		call ToggleNetrw()
 		exe "call win_gotoid(1000)"
 	endif
 endfunction
@@ -103,6 +97,13 @@ function! NetrwOnBufferOpen()
 	endif
 	call ToggleNetrw()
 endfun
+
+"}}}
+
+augroup netrw_mappings
+		autocmd!
+		autocmd filetype netrw call NetrwMappings()
+augroup END
 
 " Close Netrw if it's the only opened buffer
 autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
