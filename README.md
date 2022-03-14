@@ -185,7 +185,7 @@ I do not use a plugin for this. It's all just vim's built-in status line.
 
 #### Plugin configs
 
-- `minisnip.vim`
+- `snippet.vim`
     - `<Ctrl-s><Ctrl-s>` to apply snippet
 
 There is another file called `Note.vim`,
