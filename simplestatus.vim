@@ -15,13 +15,14 @@ endfunction
 function! GetGitBranch()
     let l:is_git_dir = system('echo -n $(git rev-parse --is-inside-work-tree)')
     let g:git_branch = l:is_git_dir == 'true' ?
-        \ system('bash -c "echo -n $(git rev-parse --abbrev-ref HEAD)"') : ''
+        \ system('bash -c "echo -n \"   ($(git rev-parse --abbrev-ref HEAD 2>/dev/null))   \""') : ''
 endfunction
 
 autocmd BufEnter * call GetGitBranch()
 " }}}
 " Color: {{{
-hi User1 ctermfg=015 ctermbg=235 guifg=#f1f1f1 guibg=#121212 cterm=bold gui=bold 
+"hi User1 ctermfg=255 ctermbg=235 guifg=#cccccc guibg=#121212 cterm=bold gui=bold 
+hi User1 ctermfg=255 ctermbg=235 guifg=#cccccc guibg=#121212 "cterm=bold gui=bold 
 "hi User1 ctermbg=015 ctermfg=235 guibg=#f1f1f1 guifg=#121212 cterm=bold gui=bold  "
 " }}}
 " Status Line: {{{
@@ -36,8 +37,8 @@ set statusline+=%=                " switch to the right side
 set statusline+=%y\ \ "
 set statusline+=%c\ \ "
 set statusline+=%l\:%L            " line numbers
-set statusline+=\ \ \ \ \ \       " blank space
-set statusline+=\(%{StatuslineGitBranch()}\)  " git brunch in current directory
-set statusline+=\ \ \ \ \ \       " blank space
+set statusline+=\                 " blank space
+set statusline+=%{StatuslineGitBranch()}  " git brunch in current directory
+set statusline+=\                 " blank space
 set statusline+=%P\ "
 " }}}
