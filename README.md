@@ -291,6 +291,6 @@ I like and use `hybrid` colorschemes.
 
 #### Lua
 
-![vim-lua](shots/vim-lua.png)
+![vim-lua](shots/gvim-lua.png)
 
 Shout out to all people who I learnt from <3
