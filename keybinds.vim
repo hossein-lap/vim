@@ -51,7 +51,7 @@ nmap <C-c> <Esc>
 cmap W w!
 "
 "" saving read-only files using sudo tee
-cmap WW w !doas tee % > /dev/null
+cmap WW w !sudo tee % > /dev/null
 
 "" Completion:
 " Spell:
