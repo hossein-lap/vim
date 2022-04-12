@@ -1,6 +1,6 @@
 "" Netrw Section:
 " open netrw on startup (0 = on, 1 = off)
-let g:NetrwIsOpen=0
+let g:NetrwIsOpen=1
 "
 let g:netrw_banner		 = 0
 let g:netrw_liststyle	 = 3
