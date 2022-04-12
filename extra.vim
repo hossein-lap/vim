@@ -52,17 +52,17 @@ function! MDownFillOff()
 	iu _
 endfunction
 
-au FileType markdown call MDownFill()
+au FileType markdown,rmd call MDownFill()
 "au FileType html,xml inoremap <  <><Left>
 " }}}
 " vim-plug {{{
 call plug#begin('~/.vim/plugged/')
   Plug 'Jorengarenar/miniSnip'
+"  Plug 'tribela/vim-transparent'
 "  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 "  Plug 'lifepillar/vim-mucomplete'
 "  Plug 'tpope/vim-markdown'
 "  Plug 'vim-scripts/fountain.vim'
-"  Plug 'tribela/vim-transparent'
 call plug#end()
 
 """" Some more plugins:
@@ -91,10 +91,10 @@ filetype indent on " file type based indentation
 " for C-like  programming where comments have explicit end
 " characters, if starting a new line in the middle of a comment automatically
 " insert the comment leader characters:
-autocmd FileType c,cpp,java 
-		\ set formatoptions+=ro
-autocmd FileType c 
-		\ set omnifunc=ccomplete#Complete
+"autocmd FileType c,cpp,java 
+"		\ set formatoptions+=ro
+"autocmd FileType c 
+"		\ set omnifunc=ccomplete#Complete
 
 " fixed indentation should be OK for XML and CSS. People have fast internet
 " anyway. Indentation set to 2.
@@ -102,7 +102,7 @@ autocmd FileType c
 
 "" Four length tab indetation for makefiles
 autocmd FileType make 
-		\ set shiftwidth=4 softtabstop=4
+		\ set shiftwidth=4 tabstop=4 softtabstop=4
 
 "" Eight length tab indetation for c files
 autocmd FileType c 
@@ -114,8 +114,8 @@ autocmd FileType asm
 
 "" Two length tab indentation for some files
 autocmd FileType vim,lua,nginx,sh,sent 
-		\ set shiftwidth=4 softtabstop=4
+		\ set shiftwidth=4 tabstop=4 softtabstop=4
 
 "" Four space indetation for python files
-autocmd FileType python 
-		\ set expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python,rmd 
+		\ set expandtab shiftwidth=4 tabstop=4 softtabstop=4
