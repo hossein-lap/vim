@@ -60,8 +60,10 @@ au BufRead,BufNewFile *.vifm set filetype=vim
 au BufRead,BufNewFile *.vi set filetype=vim
 "
 "" auto comment and uncomment with - and +
-autocmd FileType sh,ruby,python,conf,make,yaml,zsh,csh,toml  let b:comment_leader = '#'
-autocmd FileType c,cpp,java,scala,json          let b:comment_leader = '//'
+autocmd FileType sh,ruby,python,conf,make,yaml,zsh,csh,toml,rmd 
+	\ let b:comment_leader = '#'
+autocmd FileType c,cpp,java,scala,json 
+	\ let b:comment_leader = '//'
 autocmd FileType vim,vifm             let b:comment_leader = '"'
 autocmd FileType haskell,lua          let b:comment_leader = '--'
 autocmd FileType tex,plaintex         let b:comment_leader = '%'
