@@ -48,6 +48,12 @@ autocmd Filetype nroff nnoremap <leader>fe :!groff -mspdf -Tpdf %:r.ms > %:r.pdf
 autocmd Filetype markdown,vimwiki nnoremap <leader>fe :!glow -p %<CR>
 autocmd Filetype markdown,vimwiki nnoremap <leader>fw :!mdp %<CR>
 " }}}
+" rmarkdown section {{{
+"" markdown to pdf via pandoc
+"autocmd Filetype markdown nnoremap <leader>fe :!pandoc %:r.md -o %:r.pdf<CR>
+autocmd Filetype rmd nnoremap <leader>fe :!Rscript -e "rmarkdown::render('%')"<CR>
+"autocmd Filetype rmd nnoremap <leader>fw :!mdp %<CR>
+" }}}
 " sent section {{{
 autocmd Filetype text nnoremap <leader>fe :!sent -f 'CMU Serif' % &<CR>
 " }}}
