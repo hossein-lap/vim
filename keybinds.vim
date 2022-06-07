@@ -50,8 +50,8 @@ nmap <C-c> <Esc>
 "" force write to file
 cmap W w!
 "
-"" saving read-only files using sudo tee
-cmap WW w !sudo tee % > /dev/null
+"" saving read-only files using doas tee
+cmap WW w !doas tee % > /dev/null
 
 "" Completion:
 " Spell:
