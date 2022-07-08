@@ -3,15 +3,12 @@
 Hos's vim configuration
 
 Vim will have separate colorschemes and configurations
-in GUI, Terminal and tty in this setup.
+for Terminal and TTY in this setup.
 
 - Terminal
     - colorscheme: hos
 - TTY
     - colorscheme: industry
-- GUI [gvim/vim-gtk3]
-    - font: Souce Code Pro Medium 15
-    - colorscheme: materialbox
 
 ```sh
 if [[ ! -z "${questions}" ]]; then
@@ -25,7 +22,7 @@ fi
 ```sh
 for questions in ${mind}
 do
-    echo ${questions} 
+    echo ${questions}
 done
 ```
 
@@ -47,8 +44,6 @@ Also there is a section, just an `if` statement to say
 > if vim opened in a tty, set this colorscheme and do this
 
 > if vim opened inside of a Terminal, do these and use this colorscheme
-
-> and if vim opened in a GUI mode [gvim typically] use this font, and this colorscheme
 
 ### main.vim
 
@@ -115,14 +110,14 @@ Vim's built-in file manager `netrw` configs.
 Contains some `autocmd`s for:
 
 - Start netrw at startup
-	- To disable this functionality, simply set value `1` to the
-	`g:NetrwIsOpen` variable in this file:
-	```vim
-	" open netrw on startup (0 = on, 1 = off)
-	let g:NetrwIsOpen=1
-	```
+    - To disable this functionality, simply set value `1` to the
+    `g:NetrwIsOpen` variable in this file:
+    ```vim
+    " open netrw on startup (0 = on, 1 = off)
+    let g:NetrwIsOpen=1
+    ```
 
-And functions for 
+And functions for
 
 - Toggle netrw
 - Refresh netrw to update the display
@@ -136,8 +131,8 @@ Things like:
 - Auto fill `{ } [ ] ( )`
     - Has a keybinding to enable/disable
     - Fills markdown's `* *` and `_ _`
-		- This will be only enabled on markdown files, and cannot be turned off
-		  [Didn't set that :)]
+        - This will be only enabled on markdown files, and cannot be turned off
+          [Didn't set that :)]
 - don't expand tab in `make` filetype [makefiles]
 - enable `filetype plugin` and `filetype indent`
 - also it has the `plugins`
@@ -202,11 +197,11 @@ Wanna know what are those?!
 case $1 in
     yes)
     echo "Keep reading ;)"
-		;;
+        ;;
     *)
     echo "Have a nice life, take care <3"
     exit 0
-		;;
+        ;;
 esac
 ```
 
@@ -247,7 +242,7 @@ it contains colorschemes :)))
 
 Oh this one! I wrote a very small syntax highlighter
 [about 5 line of code in total XD] for files with `.sent` extension.
-In this directory, basically I told vim 
+In this directory, basically I told vim
 
 > Hey! `*.sent` files are a kind! Treat the as they are `sent`
 
