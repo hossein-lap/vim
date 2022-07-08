@@ -113,9 +113,9 @@ autocmd FileType asm
 		\ set shiftwidth=8 softtabstop=8 syntax=nasm
 
 "" Two length tab indentation for some files
-autocmd FileType vim,lua,nginx,sh,sent 
+autocmd FileType vim,lua,nginx,sh 
 		\ set shiftwidth=4 tabstop=4 softtabstop=4
 
 "" Four space indetation for python files
-autocmd FileType python,rmd 
+autocmd FileType python,rmd,sent,markdown 
 		\ set expandtab shiftwidth=4 tabstop=4 softtabstop=4
