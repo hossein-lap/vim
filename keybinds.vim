@@ -7,9 +7,13 @@
 "" <Leader> key section
 let mapleader='\'      " change the <Leader> Key
 "
+""" comment lines via - and uncomment via + 
+"nnoremap  <silent> - :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+"nnoremap <silent> + :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+"
 "" comment lines via - and uncomment via + 
-noremap <silent> - :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> + :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap  <silent> - :<C-B>silent <C-E>s;\v^(\s*);\1<C-R>=escape(b:comment_leader,'\ ')<CR><CR>:nohlsearch<CR>
+noremap <silent> + :<C-B>silent <C-E>s;\v^(\s*)<C-R>=escape(b:comment_leader,'\/')<CR>;\1;<CR>:nohlsearch<CR>
 "
 "" switch to previous tab with _ 
 noremap <silent> _ :tabprevious<CR> 
@@ -30,10 +34,10 @@ nmap <C-k>  <C-w>k
 nmap <C-l>  <C-w>l
 "
 "" spelling check
-map <leader>ss  :setlocal spell!<CR>
-map <leader>se  :set spelllang=en_us<CR>
-map <leader>sf  :set spelllang=fr<CR>
-map <leader>sd  :set spelllang=da<CR>
+nmap <leader>ss  :setlocal spell!<CR>
+nmap <leader>se  :set spelllang=en_us<CR>
+nmap <leader>sf  :set spelllang=fr<CR>
+nmap <leader>sd  :set spelllang=de<CR>
 "
 "" force save exit multi panes
 "map <Leader>zz    :xa!<CR>
@@ -56,4 +60,12 @@ cmap WW w !doas tee % > /dev/null
 "" Completion:
 " Spell:
 imap <C-z> <C-x><C-s>
-
+"
+"" Q to qa
+cmap Q qa
+"
+"" ref to reaload vim config
+nnoremap <leader>rr :source ~/.vim/vimrc<CR>
+"
+"" ref to reaload vim config
+nnoremap <silent> <C-n> :nohlsearch<CR>
