@@ -16,8 +16,8 @@ ab hte the
 "
 "" Inserting Symbols
 "" \ca in my case to toggle this
-nmap <space><space>c :call ToggleSYMB()<CR>
-"imap <space><space>c <esc>:call ToggleSYMB()<CR>a
+nmap <space><space>s :call ToggleSYMB()<CR>
+"imap <C-s><C-s>s <esc>:call ToggleSYMB()<CR>a
 
 let g:SYMBLOn=0
 
