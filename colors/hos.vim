@@ -151,6 +151,7 @@ highlight! link netrwTreeBar Comment
 highlight! link netrwDoc String
 highlight! link netrwBak String
 highlight! link netrwHdr String
+highlight! link netrwObj String
 highlight! link netrwMakefile String
 highlight! link netrwPix Normal
 highlight! link netrwPlain Normal

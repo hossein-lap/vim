@@ -6,12 +6,12 @@ Vim will have separate colorschemes and configurations
 in GUI, Terminal and tty in this setup.
 
 - Terminal
-    - colorscheme: hybrid [dark]
+    - colorscheme: hos
 - TTY
     - colorscheme: industry
 - GUI [gvim/vim-gtk3]
-    - font: Souce Code Pro Medium 14
-    - colorscheme: hybrid_material [light]
+    - font: Souce Code Pro Medium 15
+    - colorscheme: materialbox
 
 ```sh
 if [[ ! -z "${questions}" ]]; then
@@ -73,7 +73,7 @@ between two functions.
 One function to activate, one for deactivate,
 and one for toggle between those two functions.
 
-The keybinding for toggling is `<space><space>c` in normal mode.
+The keybinding for toggling is `<space><space>s` in normal mode.
 
 ### keybinds.vim
 
@@ -112,9 +112,8 @@ let g:skelkey=','
 
 Vim's built-in file manager `netrw` configs.
 
-contains some `autocmd`s for
+Contains some `autocmd`s for:
 
-- Close netrw if it's the only opened buffer
 - Start netrw at startup
 	- To disable this functionality, simply set value `1` to the
 	`g:NetrwIsOpen` variable in this file:
@@ -137,9 +136,8 @@ Things like:
 - Auto fill `{ } [ ] ( )`
     - Has a keybinding to enable/disable
     - Fills markdown's `* *` and `_ _`
-        - This will be only enabled on markdown files, and cannot be turned off [Didn't set that :)]
-- some `omnifunc` configurations
-    - like `set omnifunc=htmlcomplete#CompleteTags` for `html/xhtml` filetype
+		- This will be only enabled on markdown files, and cannot be turned off
+		  [Didn't set that :)]
 - don't expand tab in `make` filetype [makefiles]
 - enable `filetype plugin` and `filetype indent`
 - also it has the `plugins`
@@ -251,7 +249,7 @@ Oh this one! I wrote a very small syntax highlighter
 [about 5 line of code in total XD] for files with `.sent` extension.
 In this directory, basically I told vim 
 
-> Hey! `*.sent` files are a kind! they are `sent`
+> Hey! `*.sent` files are a kind! Treat the as they are `sent`
 
 And in sent.vim file, I defined the color scheme [just has 3 or 4 lines, nothing serious]
 
@@ -266,16 +264,16 @@ All the plugins will be stored [installed] here.
 ### spell
 
 If you install a new dictionary [which vim needs to download it]
-guess now :)) it will keep the dictionary files here.
+guess what? :)) it will keep the dictionary files here.
 
 ### templates
 
-This is where is keep my skeleton/template files, call them whatever you like
+This is where I keep my skeleton/template files, call them whatever you like
 I don't care XD
 
 ## Screenshots
 
-I like and use `hybrid` colorschemes.
+I like and use `256_noir` colorschemes.
 
 #### C
 
@@ -293,4 +291,4 @@ I like and use `hybrid` colorschemes.
 
 ![vim-lua](shots/gvim-lua.png)
 
-Shout out to all people who I learnt from <3
+Shout out to all people who I've learned from <3
