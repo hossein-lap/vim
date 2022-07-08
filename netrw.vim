@@ -2,22 +2,25 @@
 " open netrw on startup (0 = on, 1 = off)
 let g:NetrwIsOpen=1
 "
-let g:netrw_banner		 = 0
-let g:netrw_liststyle	 = 3
-let g:netrw_browse_split = 4
-let g:netrw_winsize		 = 25
-let g:netrw_menu		 = 1
-let g:netrw_altv		 = 1
-let g:netrw_cursor		 = 4
-let g:netrw_fastbrowse	 = 2
-let g:netrw_sort_by		 = "exten"
+let g:netrw_banner			= 0
+let g:netrw_liststyle		= 3
+let g:netrw_browse_split	= 4
+let g:netrw_winsize			= 80
+let g:netrw_menu			= 1
+let g:netrw_altv			= 1
+let g:netrw_cursor			= 0
+let g:netrw_fastbrowse		= 2
+"let g:netrw_sort_by			= "exten"
+let g:netrw_sort_by			= "name"
+let g:netrw_sort_direction			= "normal"
+let g:netrw_special_syntax	= 1
 "let g:netrw_preview	  = 1
 "let g:netrw_alto		  = 0
 "let g:netrw_keepdir	  = 0
 "
 "
 "" split char
-set fillchars+=vert:\|
+"set fillchars+=vert:\|
 
 noremap <silent> <leader>ff :call ToggleNetrw()<CR>
 noremap <silent> <leader>fe :call RefreshNetrw()<CR>
@@ -51,9 +54,9 @@ function! OpenTab()
 endfunction
 
 function! NetrwMappings()
-		noremap <buffer> V :call OpenToRight()<cr>
-		noremap <buffer> H :call OpenBelow()<cr>
-		noremap <buffer> T :call OpenTab()<cr>
+	noremap <buffer> V :call OpenToRight()<cr>
+	noremap <buffer> H :call OpenBelow()<cr>
+	noremap <buffer> T :call OpenTab()<cr>
 endfunction
 
 " Allow for netrw to be toggled
@@ -69,12 +72,12 @@ function! ToggleNetrw()
 		let g:NetrwIsOpen=0
 	else
 		let g:NetrwIsOpen=1
-		silent Lexplore
+		silent 20Lexplore
 		exe "call win_gotoid(1000)"
 	endif
 endfunction
 
-" Allow for netrw to be rereshed
+" Allow for netrw to be refreshed
 function! RefreshNetrw()
 	if g:NetrwIsOpen
 		let i = bufnr("$")
@@ -105,8 +108,8 @@ augroup netrw_mappings
 		autocmd filetype netrw call NetrwMappings()
 augroup END
 
-" Close Netrw if it's the only opened buffer
-autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
+"" Close Netrw if it's the only opened buffer
+"autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
 
 " Make netrw act like a project Draw
 augroup ProjectDrawer
