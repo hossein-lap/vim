@@ -1,7 +1,7 @@
 "" Main Settings:
 "
 set number                       " show numbers in the left
-set nowrap                       " disable line wraping
+"set nowrap                       " disable line wraping
 "
 set nocp                         " disable vi compatiblities
   if version >= 600              " check the vim version
@@ -34,7 +34,7 @@ set hlsearch              " enable search highlighting
 "
 set bs=2                  " makes the backspace work functinal
 "
-"set clipboard=unnamed         " set clipboard buffer
+set clipboard=unnamed         " set clipboard buffer
 set clipboard=unnamedplus     " -
 "
 set mouse=a                   " enable mouse function
@@ -58,6 +58,7 @@ au BufRead,BufNewFile *.qss set filetype=css
 " show vifm/vi  highlighting like vim:
 au BufRead,BufNewFile *.vifm set filetype=vim
 au BufRead,BufNewFile *.vi set filetype=vim
+au BufRead,BufNewFile *.h set filetype=c
 "
 "" auto comment and uncomment with - and +
 autocmd FileType sh,ruby,python,conf,make,yaml,zsh,csh,toml,rmd 
@@ -71,6 +72,9 @@ autocmd FileType nroff                let b:comment_leader = '\"'
 "
 "" split char
 set fillchars+=vert:\|
+"
+"" spell check
+set spelllang=en_us,de
 "
 """ keybinding
 "
