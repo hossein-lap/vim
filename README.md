@@ -274,16 +274,12 @@ I like and use `256_noir` colorschemes.
 
 ![vim-c](shots/vim-c.png)
 
-#### C [gvim]
-
-![gvim-c](shots/gvim-c.png)
-
 #### Python
 
 ![vim-python](shots/vim-python.png)
 
 #### Lua
 
-![vim-lua](shots/gvim-lua.png)
+![vim-lua](shots/vim-lua.png)
 
 Shout out to all people who I've learned from <3
