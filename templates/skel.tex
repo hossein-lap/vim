@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 
-% Preambles {{{ 
+% Using Packages {{{
 \usepackage[margin=2cm]{geometry}
 \usepackage{fontspec}
 \usepackage{graphicx}
@@ -12,53 +12,21 @@
 \usepackage{titling}
 \usepackage{hyperref}
 \usepackage{setspace}
-\hypersetup{
-    colorlinks=true,
-    linkcolor={black!70!white},
-    urlcolor={blue!70!green},
-    pdftitle={ncurses},
-}
+%\usepackage{scrlayer-scrpage}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tipa}
 % }}}
-%% Formatting {{{
-%% Section {{{ 
-%\titleformat{\part}{\huge\bfseries}{}{1em}{}
-%
-%\titleformat{\section} {\Large\bfseries}{}{0em}{}[{\titlerule[2pt]}]
-%\titlespacing{\section}{0pt}{3mm}{7mm}
-%
-%\titleformat{\subsection} {\large\bfseries}{}{0em}{}[{\titlerule[1pt]}]
-%\titlespacing{\subsection}{0pt}{7pt}{7pt}
-%
-%\titleformat{\subsubsection} {\bfseries}{}{0em}{}
-%\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
-%
-%% }}}
-%\setlength{\parindent}{0mm}
-%\setlength{\headheight}{13pt}
-%\onehalfspacing
-%% }}}
-%% Ubuntu Font Family {{{ 
-%\newfontfamily\Ubfam{Ubuntu}[
-%Path            =   /home/prime/.fonts/ubuntu/,
-%Extension       =   .ttf,
-%UprightFont     =   *-R,
-%BoldFont        =   *-M,
-%ItalicFont      =   *-RI,
-%BoldItalicFont  =   *-MI,
-%SmallCapsFont   =   *-C,
-%%SlantedFont     =   *-Th,
-%%BoldSlantedFont =   *-,
-%]
-%\setmainfont{Ubuntu}
-%\setmonofont{UbuntuMono-Regular}
-%% }}}
-%%% {{{ color definition 
+% Preambles {{{
+% Color Definition {{{
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+%% some commented ones {{{
+%\definecolor{commentsColor}{rgb}{0.497495, 0.497587, 0.497464}
 %\definecolor{codegreen}{rgb}{0,0.6,0}
 %\definecolor{mygray}{gray}{0.5}
 %\definecolor{codepurple}{rgb}{0.58,0,0.82}
-%\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
 %\definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
-%\definecolor{commentsColor}{rgb}{0.497495, 0.497587, 0.497464}
 %\definecolor{keywordsColor}{rgb}{0.000000, 0.000000, 0.635294}
 %\definecolor{stringColor}{rgb}{0.558215, 0.000000, 0.135316}
 %\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
@@ -72,60 +40,158 @@
 %%
 %%%\definecolor{onyx}{rgb}{0.66, 0.66, 0.66}
 %%%\definecolor{grullo}{rgb}{0.66, 0.6, 0.53}
-%%% }}}
-%% global code-block formatting {{{
-%\lstset{frame=tb,
-%  language=c,
-%  showstringspaces=false,
-%  columns=flexible,
-%  basicstyle={\ttfamily\normalsize},
-%  numbers=left,
-%  stringstyle={\bfseries},
-%%  morekeywords={True, False,},
-%%  keywordstyle={\color{codepurple}},
-%%  commentstyle={\color{frenchbeige}},
-%%  stringstyle={\color{alizarin}},
-%%  keywordstyle={\color{codepurple}},
-%%  ndkeywordstyle={\ttfamily\color{keywordsColor}},
-%%  emph={ls},
-%%  emphstyle={\color{red}},
-%  xleftmargin=.05\textwidth,
-%  xrightmargin=.05\textwidth,
+%% }}}
+% }}}
+% Font Families {{{
+% Ubuntu {{{
+\newfontfamily\Ubfam{UbuntuMono}[
+Path			=   /home/hos/.fonts/ubuntu/,
+Extension	   =   .ttf,
+UprightFont	 =   *-R,
+BoldFont		=   *-B,
+ItalicFont	  =   *-RI,
+BoldItalicFont  =   *-BI,
+%SmallCapsFont   =   *-C,
+%SlantedFont	 =   *-Th,
+%BoldSlantedFont =   *-,
+]
+% }}}
+% Modern Computer {{{
+\newfontfamily\Cmu{cmun}[
+Path			=   /home/hos/.fonts/cmu/Code/,
+Extension	   =   .ttf,
+UprightFont	 =   *tt,
+BoldFont		=   *tb,
+ItalicFont	  =   *it,
+BoldItalicFont  =   *tx,
+%SmallCapsFont   =   *tt,
+%SlantedFont	 =   *-Th,
+%BoldSlantedFont =   *-,
+]
+% }}}
+%% Neuton {{{
+%\newfontfamily\Neu{Neuton}[
+%Path			=   /home/hos/.fonts/neuton/,
+%Extension	   =   .ttf,
+%UprightFont	 =   *-Regular,
+%BoldFont		=   *-Bold,
+%ItalicFont	  =   *-Italic,
+%%BoldItalicFont  =   *-BoldItalic,
+%SmallCapsFont   =   *Cursive-Regular,
+%%SlantedFont	 =   *-Th,
+%%BoldSlantedFont =   *-,
+%]
+%% }}}
+\setmainfont{Liberation Serif}
+%\setmainfont{CMU Serif}
+%\setmainfont{FreeSerif}
+%\setmainfont{Spectral}
+%\setmainfont{IBM Plex Serif}
+%\setmainfont{Avrile Serif}
+%\setmainfont{Source Serif Pro}
+
+\setsansfont{Liberation Sans}
+%\setsansfont{CMU Sans Serif}
+%\setsansfont{Source Sans Pro}
+
+\setmonofont{Source Code Pro}
+%\setmonofont{UbuntuMono-Regular}
+% }}}
+% Global Code:Block Formatting {{{
+\lstset{frame=tb,
+  language=c,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=left,
+   xleftmargin=.03\textwidth,
+  xrightmargin=.03\textwidth,
+%
+  basicstyle={\ttfamily\footnotesize},
+  commentstyle={\itshape},
+  emphstyle={\underline},
+  stringstyle={\bfseries\normalsize\Cmu},
+  numberstyle={\ttfamily\scriptsize\color{black!50!white}},
+%
+  rulecolor=\color{black!50!white},
+%
+%  keywordstyle={\color{codepurple}},
+%  commentstyle={\color{frenchbeige}},
+%  stringstyle={\color{alizarin}},
+%  keywordstyle={\color{codepurple}},
+%  ndkeywordstyle={\ttfamily\color{keywordsColor}},
+%  emph={ls},
+%  emphstyle={\color{red}},
 %  backgroundcolor=\color{white!96!black},
-%  commentstyle={\color{commentsColor}},
-%  emph={printf, fprintf, scanf, fscanf},
-%  emphstyle={\ttfamily},
-%  rulecolor=\color{white!96!black},
-%  breaklines=true,
-%  breakatwhitespace=false,
-%  numbersep=3mm,
+%  ndkeywordstyle={\underline},
+  morekeywords={True, False,},
+  emph={unsigned, int, char, void, float, bool, FILE},
+%  emphstyle={\color{red}},
+  breaklines=true,
+  breakatwhitespace=false,
+  numbersep=3mm,
+  frame=leftline,
 %  frame=left top right bottom,
-%%  caption=\code{e.g.},
-%%  frame=shadowbox,
-%%  frame=none,
-%%
-%  aboveskip=5mm,
-%  belowskip=2mm,
-%  captionpos=t,
-%  numberstyle={\ttfamily\footnotesize\color{mygray}},
-%  tabsize=8
-%%
-%%
-%%
-%}
-%% end code block formatting }}}
-%% Macros {{{ 
-%% centered text box {{{ 
-%\newcommand{\header}[1] {
-%    \begin{center}
-%        \fbox{\textsc{#1}} \\
-%    \end{center}
-%}
-%% }}}
-%% in-line code {{{ 
-%\newcommand{\code}[1]{\colorbox{backcolour}{\ttfamily #1}}
-%% }}}
-%% }}}
+%  caption=\code{e.g.},
+%  frame=shadowbox,
+%  frame=none,
+%
+  aboveskip=5mm,
+  belowskip=2mm,
+  captionpos=t,
+  tabsize=8
+}
+% end code block formatting }}}
+
+% Formatting {{{
+% Section {{{
+\titleformat{\part}{\huge\bfseries}{}{1em}{}
+
+\titleformat{\section} {\LARGE\bfseries}{}{0em}{}[{\titlerule[0pt]}]
+\titlespacing{\section}{0pt}{5mm}{7mm}
+
+\titleformat{\subsection} {\Large\bfseries}{}{0em}{}[{\titlerule[0pt]}]
+\titlespacing{\subsection}{0pt}{5mm}{3mm}
+
+\titleformat{\subsubsection} {\large\bfseries}{}{0em}{}
+\titlespacing{\subsubsection}{0pt}{7pt}{7pt}
+
+% }}}
+%%\setlength{\parindent}{0mm}
+%%\setlength{\headheight}{13pt}
+\onehalfspacing
+% Page Header/Footer {{{ 
+\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[L]{\rightmark}
+%\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\renewcommand{\sectionmark}[1]{%
+\markboth{\thesection\quad #1}{}}
+\fancyhead[R]{\theauthor}
+\fancyhead[C]{\bfseries German}
+\fancyhead[L]{\leftmark}
+\fancyfoot[L]{\rightmark}
+\fancyfoot[C]{}
+\fancyfoot[R]{(\thepage)}
+
+%\pagestyle{scrheadings}
+%\clearpairofpagestyles
+%%\ohead{\rightmark}
+%\lohead{\thesection}
+%\rehead{\thesubsection}
+%%\cfoot[\pagemark]{\pagemark}
+% }}}
+% }}}
+% Links color {{{
+\hypersetup{
+	colorlinks=true,
+	linkcolor={blue!70!black},
+	urlcolor={blue!70!green},
+    citecolor={red!75!yellow},
+	pdftitle={ncurses},
+}
+% }}}
 
 %% Persian font {{{
 %\usepackage{xepersian}
@@ -137,21 +203,57 @@
 %\defpersianfont\khali{XB Kayhan Sayeh}
 %\defpersianfont\yekan{XM Yekan}
 %% }}}
-%% Title {{{ 
-%\title{}
-%\author{}
-%\date{}
+
+% }}}
+% Macros {{{
+% in-line code {{{
+\newcommand{\code}[1]{%
+	\colorbox{backcolour}{\texttt{\footnotesize #1}}%
+}
+% }}}
+%% centered text box {{{
+%\newcommand{\header}[1] {
+%	\begin{center}
+%		\fbox{\textsc{#1}} \\
+%	\end{center}
+%}
 %% }}}
+%% Figures {{{
+%\newcommand{\picin}[3]{%
+%	\begin{figure}[h]
+%	\begin{center}
+%		\includegraphics[width=#3\textwidth]{#1}
+%	\end{center}
+%		\caption{#2}
+%	\end{figure}
+%}
+%% }}}
+%% vocabulary {{{
+%\newcommand\voct[4]{%
+%	#2 & #1 & #3 & #4 \\
+%}
+%% }}}
+% }}}
+% Title {{{
+\title{\bfseries TITLE}
+\author{TUTHOR}
+\date{DATE}
+% }}}
 
 \begin{document}
-%% Beginning {{{
-%\pagenumbering{roman}
-%\maketitle
-%\vspace{4cm}
-%\tableofcontents
-%\vfill\newpage
-%% }}}
-%\begin{Ubfam}
 
-%\end{Ubfam}
+% Body {{{
+% Beginning {{{
+\pagenumbering{roman}
+
+\maketitle
+\vfill\newpage
+
+\tableofcontents
+\vfill\newpage
+
+\pagenumbering{arabic}
+% }}}
+% }}}
+
 \end{document}

@@ -1,0 +1,51 @@
+---
+header-includes:
+    - \usepackage[utf8]{inputenc}
+    - \usepackage[T1]{fontenc}
+    - \usepackage{setspace}
+    - \onehalfspacing
+    - \usepackage{fontspec}
+    - \setmonofont{Source Code Pro Medium}
+    - \setmainfont{Ubuntu-Regular}
+    - \usepackage{xepersian}
+    - \settextfont{Yas}
+    - \setlatintextfont{FreeSerif}
+#    - \let\textormath=\TextOrMath
+
+dir: rtl
+output:
+    pdf_document:
+        latex_engine: xelatex
+        toc: false
+        number_sections: true
+        fig_caption: true
+        keep_tex: true
+        highlight: tango
+#    ## colorschemes -> tango, kate, monochrome, haddock
+    word_document:
+        toc: false
+    html_document:
+        toc: false
+
+title: "**The Title**"
+subtitle: "R Markdown"
+author: "**The Author**"
+date: 'The Date'
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+knitr::opts_chunk$set(
+    comment = '|  ',
+    message = FALSE,
+    warning = FALSE,
+    results = 'markup',
+    background = '#777777'
+)
+knitr::opts_knit$set(
+    progress = FALSE,
+    verbose = FALSE
+)
+```
+
