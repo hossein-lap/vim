@@ -176,16 +176,16 @@
 "hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 "
-"hi User1 ctermfg=232 ctermbg=208 guifg=#000000 guibg=#ff8700 "cterm=bold gui=bold
-"hi User4 ctermfg=208 ctermbg=232 guifg=#ff8700 guibg=#000000 "cterm=bold gui=bold
-"hi User1 ctermbg=015 ctermfg=232 guibg=#f1f1f1 guifg=#121212 "cterm=bold gui=bold
-"hi User4 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#121212 "cterm=bold gui=bold
-"hi User1 ctermfg=232 ctermbg=119 guifg=#000000 guibg=#87ff5f "cterm=bold gui=bold
-"hi User4 ctermfg=119 ctermbg=232 guifg=#87ff5f guibg=#000000 "cterm=bold gui=bold
-"hi User1 ctermfg=232 ctermbg=168 guifg=#000000 guibg=#d75f87 "cterm=bold gui=bold
-"hi User4 ctermfg=168 ctermbg=232 guifg=#d75f87 guibg=#000000 "cterm=bold gui=bold
-"hi User1 ctermfg=232 ctermbg=167 guifg=#000000 guibg=#fb4943 "cterm=bold gui=bold
-"hi User4 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=208 guifg='#000000' guibg=#ff8700 "cterm=bold gui=bold
+"hi User4 ctermfg=208 ctermbg=232 guifg='#ff8700' guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermbg=015 ctermfg=232 guibg='#f1f1f1' guifg=#121212 "cterm=bold gui=bold
+"hi User4 ctermfg=015 ctermbg=232 guifg='#f1f1f1' guibg=#121212 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=119 guifg='#000000' guibg=#87ff5f "cterm=bold gui=bold
+"hi User4 ctermfg=119 ctermbg=232 guifg='#87ff5f' guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=168 guifg='#000000' guibg=#d75f87 "cterm=bold gui=bold
+"hi User4 ctermfg=168 ctermbg=232 guifg='#d75f87' guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=167 guifg='#000000' guibg=#fb4943 "cterm=bold gui=bold
+"hi User4 ctermfg=167 ctermbg=232 guifg='#fb4943' guibg=#000000 "cterm=bold gui=bold
 "}}}
 "" used one {{{
 "hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc cterm=bold gui=bold
@@ -249,40 +249,61 @@ let g:currentmode={
 
 " }}}
 "
+"" Colors {{{ 
+"hi User1 ctermbg=168	ctermfg=234	guibg=#ff7799	guifg=#282a2e	cterm=bold	gui=bold
+"hi User2 ctermfg=208	ctermbg=234	guifg=#00afcc	guibg=#282a2e	cterm=bold	gui=bold
+"hi User3 ctermfg=208	ctermbg=234	guifg=#00afcc	guibg=#282a2e	"cterm=bold	gui=bold
+"hi User4 ctermfg=168	ctermbg=234	guifg=#ff7799	guibg=#282a2e	"cterm=bold	gui=bold
+""hi User3 ctermfg=12		ctermbg=234	guifg=#00afcc	guibg=#282a2e	"cterm=bold	gui=bold
+""hi User4 ctermfg=10		ctermbg=234	guifg=#cccccc	guibg=#282a2e	"cterm=bold	gui=bold
+"hi User5 ctermfg=11		ctermbg=234	guifg=#ff9800	guibg=#282a2e	"cterm=bold	gui=bold
+"hi User6 ctermfg=175	ctermbg=234	guifg=#ff9800	guibg=#282a2e	"cterm=bold	gui=bold
+"
+"hi Unfoc ctermbg=243 ctermfg=235 guibg=#767676 guifg=#121212 cterm=NONE gui=NONE
+"hi! link StatusLineNC Unfoc
+"" }}}
 " Colors {{{ 
-hi User1 ctermfg=9 ctermbg=234 guifg=#ff7799 guibg=#282a2e " cterm=bold gui=bold
-hi User2 ctermfg=208  ctermbg=234 guifg=#00afcc guibg=#282a2e " cterm=bold gui=bold
-hi User3 ctermfg=12  ctermbg=234 guifg=#00afcc guibg=#282a2e " cterm=bold gui=bold
-hi User4 ctermfg=10  ctermbg=234 guifg=#cccccc guibg=#282a2e " cterm=bold gui=bold
-hi User5 ctermfg=11  ctermbg=234 guifg=#ff9800 guibg=#282a2e " cterm=bold gui=bold
-hi User6 ctermfg=175  ctermbg=234 guifg=#ff9800 guibg=#282a2e " cterm=bold gui=bold
+hi User1 ctermbg=9		ctermfg=234	guibg=#f92633	guifg=#282a2e	cterm=bold	gui=bold
+hi User2 ctermfg=208	ctermbg=234	guifg=#00afcc	guibg=#282a2e	cterm=bold	gui=bold
+hi User3 ctermfg=208	ctermbg=234	guifg=#00afcc	guibg=#282a2e	"cterm=bold	gui=bold
+hi User4 ctermfg=168	ctermbg=234	guifg=#ff7799	guibg=#282a2e	"cterm=bold	gui=bold
+"hi User3 ctermfg=12		ctermbg=234	guifg=#00afcc	guibg=#282a2e	"cterm=bold	gui=bold
+"hi User4 ctermfg=10		ctermbg=234	guifg=#cccccc	guibg=#282a2e	"cterm=bold	gui=bold
+hi User5 ctermfg=11		ctermbg=234	guifg=#ff9800	guibg=#282a2e	"cterm=bold	gui=bold
+hi User6 ctermfg=175	ctermbg=234	guifg=#ff9800	guibg=#282a2e	"cterm=bold	gui=bold
+
+hi Unfoc ctermbg=243 ctermfg=235 guibg=#767676 guifg=#121212 cterm=NONE gui=NONE
+hi! link StatusLineNC Unfoc
 " }}}
 " Config section {{{
 set laststatus=2                                       " show status line
 set statusline=                                        " status line config
-set statusline+=%1*\ %{toupper(g:currentmode[mode()])} " The current mode
+set statusline+=%1*\                   " blank space
+set statusline+=%{toupper(g:currentmode[mode()])} " The current mode
 "set statusline+=%1*%{toupper(g:currentmode[mode()])}   " The current mode
-set statusline+=\                                      " blank space
-set statusline+=%2*%{StatuslineGitBranch()}               " git brunch in current directory
-"set statusline+=%4*\                                   " blank space
+set statusline+=%1*\                   " blank space
+set statusline+=%2*\                   " blank space
+set statusline+=%{StatuslineGitBranch()}               " git brunch in current directory
+set statusline+=%3*\                                   " blank space
 set statusline+=%3*%<%F                " Full path
 set statusline+=%4*\                   " blank space
-set statusline+=%4*%m                  " Modified character
+set statusline+=%m                  " Modified character
 set statusline+=%4*\                   " blank space
-set statusline+=%4*%r                  " ReadOnly character
+set statusline+=%r                  " ReadOnly character
 set statusline+=%=                     " Break to the right side
-set statusline+=%4*\{                  " { char
-set statusline+=%4*%{&fileformat}      " show file format [EOL character]
-set statusline+=%4*\}                  " } char
-set statusline+=%5*\                   " blank space
-set statusline+=%5*%c                  " Current character
-set statusline+=%5*\                   " blank space
-set statusline+=%5*\|                  " Separator
-set statusline+=%5*\                   " blank space
-set statusline+=%5*%l\/%L              " Line count
-set statusline+=%5*\                   " blank space
-set statusline+=%6*%y                  " file type
-set statusline+=%5*\                   " blank space
+set statusline+=\{                  " { char
+set statusline+=%{&fileformat}      " show file format [EOL character]
+set statusline+=\}                  " } char
+set statusline+=%4*\                   " blank space
+set statusline+=%3*\                   " blank space
+set statusline+=%c                  " Current character
+set statusline+=%3*\                   " blank space
+set statusline+=%2*\                   " blank space
+set statusline+=%l\/%L              " Line count
+set statusline+=%2*\                   " blank space
+set statusline+=%1*\                   " blank space
+set statusline+=%y                  " file type
+set statusline+=%1*\                   " blank space
 "set statusline+=\                      " blank space
 "set statusline+=\»                     " ascii character
 "set statusline+=\                      " blank space
