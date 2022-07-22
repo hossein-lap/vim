@@ -57,7 +57,7 @@ au FileType markdown,rmd call MDownFill()
 " }}}
 " vim-plug {{{
 call plug#begin('~/.vim/plugged/')
-  Plug 'tribela/vim-transparent' " transparent background
+  "Plug 'tribela/vim-transparent' " transparent background
 "  Plug 'Jorengarenar/miniSnip' " minimal snippet manager
 "  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " latex compile/preview
 "  Plug 'lifepillar/vim-mucomplete'
