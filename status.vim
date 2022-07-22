@@ -1,8 +1,8 @@
-"  _  _ ___                                      
+"  _  _ ___
 " | || | __|   H
 " | __ | _|    A
 " |_||_|___|   P
-"                                                
+"               
 "                                  "             {{{
 """ status line drafts -used to be functions- {{{
 "" git status function
