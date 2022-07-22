@@ -18,10 +18,10 @@ if empty($DISPLAY)
 else
 "  colorscheme hybrid
 "  colorscheme 256_noir
-":  colorscheme sunbather
+  "colorscheme sunbather
   colorscheme hos
-:  source ~/.vim/simplestatus.vim
-"  source ~/.vim/sstatus.vim
+"  source ~/.vim/simplestatus.vim
+:  source ~/.vim/sstatus.vim
 "  source ~/.vim/extra.vim
 endif
 " }}}
