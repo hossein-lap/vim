@@ -270,6 +270,12 @@ I don't care XD
 
 I like and use `256_noir` colorschemes.
 
+#### Latest (C/Python/Netrw)
+
+![vim-c](shots/vim-c-py.png)
+
+### from (tag: v8.2.6)
+
 #### C
 
 ![vim-c](shots/vim-c.png)
