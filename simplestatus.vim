@@ -45,46 +45,46 @@ set statusline+=%{StatuslineGitBranch()}  " git brunch in current directory
 set statusline+=\                 " blank space
 set statusline+=%P\ "
 " }}}
-" TabLine {{{
-function MyTabLine()
-	let s = '%1*'
-	for i in range(tabpagenr('$'))
-	" select the highlighting
-	if i + 1 == tabpagenr()
-		let s ..= '%#TabLineSel#'
-	else
-		let s ..= '%1*'
-	endif
-
-	" set the tab page number (for mouse clicks)
-	let s ..= '%' .. (i + 1) .. 'T'
-
-	" the label is made by MyTabLabel()
-	let s ..= ' %{MyTabLabel(' .. (i + 1) .. ')} '
-	endfor
-
-	" after the last tab fill with TabLineFill and reset tab page nr
-	let s ..= '%1*%T'
-
-	" right-align the label to close the current tab page
-	if tabpagenr('$') > 1
-	let s ..= '%=%1*%999Xx'
-	endif
-
-	return s
-endfunction
-
-function MyTabLabel(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-	return bufname(buflist[winnr - 1])
-endfunction
-
-
-set showtabline=2
-set tabline=%!MyTabLine()
-
-"set tabline=
-"set tabline+=%1*%.20t
-"set tabline+=\ \|                " blank space
-" }}}
+"" TabLine {{{
+"function MyTabLine()
+	"let s = '%1*'
+	"for i in range(tabpagenr('$'))
+	"" select the highlighting
+	"if i + 1 == tabpagenr()
+		"let s ..= '%#TabLineSel#'
+	"else
+		"let s ..= '%1*'
+	"endif
+"
+	"" set the tab page number (for mouse clicks)
+	"let s ..= '%' .. (i + 1) .. 'T'
+"
+	"" the label is made by MyTabLabel()
+	"let s ..= ' %{MyTabLabel(' .. (i + 1) .. ')} '
+	"endfor
+"
+	"" after the last tab fill with TabLineFill and reset tab page nr
+	"let s ..= '%1*%T'
+"
+	"" right-align the label to close the current tab page
+	"if tabpagenr('$') > 1
+	"let s ..= '%=%1*%999Xx'
+	"endif
+"
+	"return s
+"endfunction
+"
+"function MyTabLabel(n)
+	"let buflist = tabpagebuflist(a:n)
+	"let winnr = tabpagewinnr(a:n)
+	"return bufname(buflist[winnr - 1])
+"endfunction
+"
+"
+"set showtabline=2
+"set tabline=%!MyTabLine()
+"
+""set tabline=
+""set tabline+=%1*%.20t
+""set tabline+=\ \|                " blank space
+"" }}}
