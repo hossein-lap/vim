@@ -16,12 +16,12 @@ if empty($DISPLAY)
 :   colorscheme desert
 :   set nocursorline
 else
-"  colorscheme hybrid
-"  colorscheme 256_noir
+  "colorscheme hybrid
+  "colorscheme 256_noir
   "colorscheme sunbather
   colorscheme hos
-"  source ~/.vim/simplestatus.vim
-:  source ~/.vim/sstatus.vim
+  source ~/.vim/simplestatus.vim
+":  source ~/.vim/sstatus.vim
 "  source ~/.vim/extra.vim
 endif
 " }}}
@@ -52,3 +52,9 @@ source ~/.vim/extra.vim
 "
 "" minisnippet plugin configs
 source ~/.vim/snippet.vim
+
+source ~/.vim/Note.vim
+
+"highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
+autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
