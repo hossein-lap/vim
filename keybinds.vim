@@ -46,10 +46,10 @@ nmap <leader>sd  :set spelllang=de<CR>
 "map <Leader>zq    :qa!<CR>
 "
 "" split long single line apart
-map Q gqq
+nmap Q gqq
 "
 "" use control-c instead of escape
-nmap <C-c> <Esc>
+imap <C-c> <Esc>
 "
 "" force write to file
 cmap W w!
