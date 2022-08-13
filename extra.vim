@@ -57,18 +57,28 @@ au FileType markdown,rmd call MDownFill()
 " }}}
 " vim-plug {{{
 call plug#begin('~/.vim/plugged/')
-  "Plug 'tribela/vim-transparent' " transparent background
-"  Plug 'Jorengarenar/miniSnip' " minimal snippet manager
-"  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " latex compile/preview
-"  Plug 'lifepillar/vim-mucomplete'
-"  Plug 'tpope/vim-markdown'
-"  Plug 'vim-scripts/fountain.vim'
+	Plug 'tribela/vim-transparent' " transparent background
+	"" colorschemes
+	Plug 'hossein-lap/vim-256noir'
+	"Plug 'tomasiser/vim-code-dark'
+	"Plug 'dikiaap/minimalist'
+	"Plug 'lifepillar/vim-solarized8'
+	"Plug 'ayu-theme/ayu-vim'
+	"Plug 'morhetz/gruvbox'
+	"Plug 'fxn/vim-monochrome'
+	"Plug 'nickaroot/vim-xcode-dark-theme'
 call plug#end()
 
 """" Some more plugins:
 """" Do not uncomment these here
 """" You should put them between [call plug#XXX] first
 
+
+"  Plug 'Jorengarenar/miniSnip' " minimal snippet manager
+"  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " latex compile/preview
+"  Plug 'lifepillar/vim-mucomplete'
+"  Plug 'tpope/vim-markdown'
+"  Plug 'vim-scripts/fountain.vim'
 ""  Plug 'ap/vim-css-color'			   " Color previews for CSS
 ""  Plug 'vim-scripts/AutoComplPop'	   " auto completion plugin
 ""  Plug 'itchyny/lightline.vim'		  " Lightline statusbar
