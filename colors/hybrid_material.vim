@@ -86,18 +86,14 @@ let g:colors_name = "hybrid_material"
 
 let s:palette = {'gui' : {} , 'cterm' : {}}
 
-"let s:gui_background = "#263238"
-"let s:gui_selection  = "#455A64"
-"let s:gui_line       = "#212D32"
-"let s:gui_comment    = "#707880"
-let s:gui_background = "#1d1f21"
-let s:gui_selection  = "#373b41"
-let s:gui_line       = "#282a2e"
+let s:gui_background = "#263238"
+let s:gui_selection  = "#455A64"
+let s:gui_line       = "#212D32"
 let s:gui_comment    = "#707880"
 
 let s:palette.gui.background = { 'dark' : s:gui_background , 'light' : "#e4e4e4" }
 let s:palette.gui.foreground = { 'dark' : "#c5c8c6"        , 'light' : "#000000" }
-let s:palette.gui.selection  = { 'dark' : s:gui_selection  , 'light' : "#5f5f5f" }
+let s:palette.gui.selection  = { 'dark' : s:gui_selection  , 'light' : "#bcbcbc" }
 let s:palette.gui.line       = { 'dark' : s:gui_line       , 'light' : "#d0d0d0" }
 let s:palette.gui.comment    = { 'dark' : s:gui_comment    , 'light' : "#5f5f5f" }
 let s:palette.gui.red        = { 'dark' : "#cc6666"        , 'light' : "#5f0000" }
@@ -107,8 +103,8 @@ let s:palette.gui.green      = { 'dark' : "#b5bd68"        , 'light' : "#005f00"
 let s:palette.gui.aqua       = { 'dark' : "#8abeb7"        , 'light' : "#005f5f" }
 let s:palette.gui.blue       = { 'dark' : "#81a2be"        , 'light' : "#00005f" }
 let s:palette.gui.purple     = { 'dark' : "#b294bb"        , 'light' : "#5f005f" }
-let s:palette.gui.window     = { 'dark' : s:gui_selection  , 'light' : "#808080" }
-let s:palette.gui.darkcolumn = { 'dark' : "#1c1c1c"        , 'light' : "#bcbcbc" }
+let s:palette.gui.window     = { 'dark' : s:gui_selection  , 'light' : "#9e9e9e" }
+let s:palette.gui.darkcolumn = { 'dark' : "#1c1c1c"        , 'light' : "#808080" }
 let s:palette.gui.addbg      = { 'dark' : "#5F875F"        , 'light' : "#d7ffd7" }
 let s:palette.gui.addfg      = { 'dark' : "#d7ffaf"        , 'light' : "#005f00" }
 let s:palette.gui.changebg   = { 'dark' : "#5F5F87"        , 'light' : "#d7d7ff" }
@@ -331,13 +327,13 @@ exe "hi! SpellCap"      .s:fg_blue        .s:bg_none        .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_none        .s:fmt_undr
 exe "hi! SpellBad"      .s:fg_red         .s:bg_none        .s:fmt_undr
 exe "hi! SpellRare"     .s:fg_purple      .s:bg_none        .s:fmt_undr
-exe "hi! StatusLine"    .s:fg_foreground  .s:bg_line   .s:fg_bold
+exe "hi! StatusLine"    .s:fg_foreground  .s:bg_selection   .s:fg_bold
 exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_none
 exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
 "   TabLineFill"
 "   TabLineSel"
 exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Visual"        .s:fg_none        .s:bg_line   .s:fmt_none
+exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
 " FIXME LongLineWarning to use variables instead of hardcoding

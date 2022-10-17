@@ -3,6 +3,7 @@
 " | __ | _|    A
 " |_||_|___|   P
 "                                                
+set ls=2
 "" {{{
 "
 """ status line drafts -used to be functions- {{{

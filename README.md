@@ -1,14 +1,14 @@
 # vim
 
-Hos's vim configuration
+Hos's vim configuration (Plugin-free)
 
 Vim will have separate colorschemes and configurations
 for Terminal and TTY in this setup.
 
 - Terminal
-    - colorscheme: hos
+    - colorscheme: hybrid
 - TTY
-    - colorscheme: industry
+    - colorscheme: desert
 
 ```sh
 if [[ ! -z "${questions}" ]]; then
@@ -26,13 +26,39 @@ do
 done
 ```
 
-Let me explain a little bit :)
+- Dependencies:
+
+You need `git` for status-line to show the current git branch.
+
+## Shortcuts:
+
+**Normal Mode**
+
+| Command      | Description                 |
+|--------------|-----------------------------|
+| `<leader>fe` | Compile current file        |
+| `<leader>fw` | Run current file            |
+| `<leader>ff` | Open netrw file-manager     |
+| `<leader>cc` | Run `make` command          |
+| `<leader>ss` | Enable spell-check          |
+| `-`          | Comment line(s)             |
+| `+`          | Uncomment line(s)           |
+
+- `-` and `+` also works in Visual-X mode.
+
+**Command mode**
+
+| Command      | Description                         |
+|--------------|-------------------------------------|
+| `WW`         | Write current file with root access |
+| `Q`          | An alias to `qa` command (quit-all) |
+
+Let's take a closer look, shall we? :)
 
 ## Files
 
 I have all of my configurations in separate files.
-One file for keybindings, another for
-statusline configs and so on.
+One file for keybindings, another for statusline configs and so on.
 In each file, I have some kind of settings.
 
 ### vimrc
@@ -50,9 +76,8 @@ Also there is a section, just an `if` statement to say
 This file contains some of basic settings like
 
 - Line numbering
-- No Vi compatibilities
-- set clipboard
-- show status line
+- No vi compatibilities
+- Set clipboard
 - etc...
 
 ### abreviation.vim
@@ -68,7 +93,7 @@ between two functions.
 One function to activate, one for deactivate,
 and one for toggle between those two functions.
 
-The keybinding for toggling is `<space><space>s` in normal mode.
+The keybinding for toggling is `<space><space>a` in normal mode.
 
 ### keybinds.vim
 
@@ -137,18 +162,6 @@ Things like:
 - enable `filetype plugin` and `filetype indent`
 - also it has the `plugins`
 
-#### Plugins
-
-`vim-plug` **is my favorate plugin manager.**
-
-Active plugins [requires `:PlugInstall` to install]
-
-- 'Jorengarenar/miniSnip'
-- 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-- 'vimwiki/vimwiki'
-- 'lifepillar/vim-mucomplete'
-- also some plugins which are commented out ;)
-
 ### oldcp.vim
 
 This file is for compile/execute programs/scripts.
@@ -161,7 +174,7 @@ Syntax is like
 autocmd FileType <File_type> nnoremap <Key_binding> :!<Command><CR>
 ```
 
-### {status,simplestatus}.vim
+### {status,sstatus,simplestatus}.vim
 
 This file[s] is just status line.
 
@@ -175,17 +188,6 @@ I do not use a plugin for this. It's all just vim's built-in status line.
     - The most external tool it use is `netrw`
     - I did not included it in `vimrc` file
     - Give it a try: `vim -u $PWD/vi.vim ~/.bashrc`
-
-#### Plugin configs
-
-- `snippet.vim`
-    - `<Ctrl-s><Ctrl-s>` to apply snippet
-
-There is another file called `Note.vim`,
-this file is to use with two scripts `NoteMarkdown.sh` and `NoteBuild.sh`
-for taking notes and building pdf[s] from that notes.
-
-[I am thinking about a way to do it differently, but for now, it's all I got :)]
 
 ## Directories
 
@@ -205,38 +207,28 @@ case $1 in
 esac
 ```
 
-### autoload
-
-The `vim-plug` plugin manager lives in this directory :)
-
 ### colors
 
-It is obvious right?
-it contains colorschemes :)))
+It's obvious right? It contains color-schemes :)))
 
 #### Available colors
 
-1. 256_noir
-1. ayu
-1. codedark
-1. dalton
-1. deus
-1. fogbell
-1. genericdc-light
-1. gruvbox
-1. hybrid
-1. materialbox
-1. material
-1. minimalist
-1. molokai
-1. monokai_pro
-1. nord
-1. onehalf
-1. phoenix
-1. simple-dark
-1. solarized8
-1. sunbather
-1. xcode
+1. 256_noir.vim
+1. codedark.vim
+1. dracula.vim
+1. gruvbox.vim
+1. hybrid_material.vim
+1. hybrid_reverse.vim
+1. hybrid.vim
+1. minimalist.vim
+1. monochrome.vim
+1. solarized.vim
+1. sunbather.vim
+1. xcodedarkhc.vim
+1. xcodedark.vim
+1. xcodelighthc.vim
+1. xcodelight.vim
+1. xcodewwdc.vim
 
 ### ftdetect
 
@@ -247,14 +239,6 @@ In this directory, basically I told vim
 > Hey! `*.sent` files are a kind! Treat the as they are `sent`
 
 And in sent.vim file, I defined the color scheme [just has 3 or 4 lines, nothing serious]
-
-### miniSnip
-
-Custom snippets written by me to use it with `minisnip` plugin
-
-### plugged
-
-All the plugins will be stored [installed] here.
 
 ### spell
 
@@ -268,24 +252,6 @@ I don't care XD
 
 ## Screenshots
 
-I like and use `256_noir` colorschemes.
+![Shot from skels](shots/skels.png)
 
-#### Latest (C/Python/Netrw)
-
-![vim-c](shots/vim-c-py.png)
-
-### from (tag: v8.2.6)
-
-#### C
-
-![vim-c](shots/vim-c.png)
-
-#### Python
-
-![vim-python](shots/vim-python.png)
-
-#### Lua
-
-![vim-lua](shots/vim-lua.png)
-
-Shout out to all people who I've learned from <3
+Shout out to Luke Smith, DT, and all other people who I've learned from <3

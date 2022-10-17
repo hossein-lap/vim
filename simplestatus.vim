@@ -4,6 +4,7 @@
 "  |_||_|___|   P
 "                
 "
+set ls=2
 " Git Function: {{{
 function! StatuslineGitBranch()
     if exists("g:git_branch")
@@ -23,27 +24,29 @@ autocmd BufEnter * call GetGitBranch()
 " }}}
 " Color: {{{
 "hi NCStatus ctermfg=255 ctermbg=235 guifg=#cccccc guibg=#121212 cterm=NONE gui=NONE 
-hi User1 ctermfg=255 ctermbg=235 guifg=#cccccc guibg=#121212 cterm=NONE gui=NONE 
-hi User2 ctermbg=255 ctermfg=235 guibg=#cccccc guifg=#121212 cterm=NONE gui=NONE 
+"hi User1 ctermfg=255 ctermbg=235 guifg=#cccccc guibg=#121212 cterm=NONE gui=NONE 
+"hi User2 ctermbg=255 ctermfg=235 guibg=#cccccc guifg=#121212 cterm=NONE gui=NONE 
 "hi User1 ctermbg=015 ctermfg=235 guibg=#f1f1f1 guifg=#121212 cterm=NONE gui=NONE  "
 "hi! link StatusLineNC User2
+hi! link User1 StatusLine
+hi! link User2 StatusLineNC
 " }}}
 " Status Line: {{{
 set laststatus=2                  " show status line
 set statusline=                   " status line config
 set statusline+=%1*\              " set color, blank space
 "set statusline+=%#StatusLine#\    " default status color
-set statusline+=%f\ "
-set statusline+=%m\ "
+set statusline+=%f\               "
+set statusline+=%m\               "
 set statusline+=%r%h%w            " readonly, helpfile, preview
 set statusline+=%=                " switch to the right side
-set statusline+=%y\ \ "
-set statusline+=%c\ \ "
+set statusline+=%y\ \             "
+set statusline+=%c\ \             "
 set statusline+=%l\:%L            " line numbers
 set statusline+=\                 " blank space
 set statusline+=%{StatuslineGitBranch()}  " git brunch in current directory
 set statusline+=\                 " blank space
-set statusline+=%P\ "
+set statusline+=%P\               "
 " }}}
 "" TabLine {{{
 "function MyTabLine()

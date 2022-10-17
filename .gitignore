@@ -5,3 +5,5 @@ plugged/*
 *.old
 *.bak
 spell/
+colors/*
+*~

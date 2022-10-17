@@ -1,16 +1,13 @@
-/*   ____     _
- *  |  _ \   | |
- *  | |_) |  | |
- *  |  __/ |_| |
- *  |_|   \___/
- */
-
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int
+main(void)
 {
-	printf("Hello world!\n");
-	int i = getchar();
-	printf("%c\n", i);
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			printf("%d\t", i * j);
+		}
+		printf("\n");
+	}
 	return 0;
 }

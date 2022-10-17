@@ -3,6 +3,7 @@
 " | __ | _|    A
 " |_||_|___|   P
 "               
+set ls=2
 "                                  "             {{{
 """ status line drafts -used to be functions- {{{
 "" git status function
@@ -246,7 +247,7 @@ hi User2 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
 "set statusline+=%#VisualColor#%{(mode()=='V')?'\ \ V-Line\ ':''}
 "set statusline+=%#VisualColor#%{(mode()=='CTRL-v')?'\ \ V-Block\ ':''}
 
-"" current config section {{{
+" current config section {{{
 set laststatus=2                                           " show status line
 set statusline=                                            " status line config
 set statusline+=%2*\ %{toupper(g:currentmode[mode()])}\    " The current mode
@@ -264,4 +265,4 @@ set statusline+=%2*\ \«                                    " blank space
 set statusline+=\                                          " blank space
 set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
 set statusline+=\                                          " blank space
-"" }}}
+" }}}

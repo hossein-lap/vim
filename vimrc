@@ -1,31 +1,36 @@
-"   _  _ ___     
-"  | || | __|   H
-"  | __ | _|    A
-"  |_||_|___|   P
-"                
-"                                   "
-"" main section                     "
+"          _         
+"   _   __(_)___ ___ 
+"  | | / / / __ `__ \
+"  | |/ / / / / / / /
+"  |___/_/_/ /_/ /_/ 
+" 
+"" Main Section:
 source ~/.vim/main.vim
 "
-"" status line section
-"source ~/.vim/status.vim
-"
-" separate tty and terminal {{{
+" Separate Tty And Terminal:
 if empty($DISPLAY)
-:   " TTY
-:   colorscheme desert
-:   set nocursorline
+	"" TTY
+	colorscheme desert
+	set nocursorline
 else
-  "colorscheme hybrid
-  "colorscheme 256_noir
-  "colorscheme sunbather
-  colorscheme hos
-  source ~/.vim/simplestatus.vim
-":  source ~/.vim/sstatus.vim
-"  source ~/.vim/extra.vim
+	"" Terminal
+	"set ls=0
+	"set showtabline=0
+	"set cursorline
+	"" Colorschemes:
+	"solarized minimalist 256_noir codedark
+	"sunbather hybrid xcodedarkhc gruvbox
+	colorscheme hybrid
+	""
+	"" Statusline:
+	source ~/.vim/simplestatus.vim
+	"source ~/.vim/sstatus.vim
+	"source ~/.vim/status.vim
+	""source ~/.vim/extra.vim
 endif
-" }}}
 "
+hi SpecialKey ctermbg=NONE guibg=NONE
+
 "" keybinding
 source ~/.vim/keybinds.vim
 "
@@ -50,11 +55,9 @@ au FileType sent source ~/.vim/sent.vim
 "" add some extra features + plugins (commented out)
 source ~/.vim/extra.vim
 "
-"" minisnippet plugin configs
-source ~/.vim/snippet.vim
-
+"" Build notes from one script of mine (if you don's know or use it, just comment it out)
 source ~/.vim/Note.vim
-
+"
 "highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
 autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212

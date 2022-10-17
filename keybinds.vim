@@ -12,20 +12,22 @@ let mapleader='\'      " change the <Leader> Key
 "nnoremap <silent> + :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 "
 "" comment lines via - and uncomment via + 
-noremap  <silent> - :<C-B>silent <C-E>s;\v^(\s*);\1<C-R>=escape(b:comment_leader,'\ ')<CR><CR>:nohlsearch<CR>
+noremap <silent> - :<C-B>silent <C-E>s;\v^(\s*);\1<C-R>=escape(b:comment_leader,'\ ')<CR><CR>:nohlsearch<CR>
 noremap <silent> + :<C-B>silent <C-E>s;\v^(\s*)<C-R>=escape(b:comment_leader,'\/')<CR>;\1;<CR>:nohlsearch<CR>
 "
-"" switch to previous tab with _ 
-noremap <silent> _ :tabprevious<CR> 
+"" Switch to next/previous buffer with <C-n> and <C-b>
+noremap <silent> <C-n> :bnext<CR> 
+noremap <silent> <C-b> :bprevious<CR> 
 "
 "" toggle paste mode
 nmap <C-P> :set paste!<CR>
+"nmap <C-P> :set list!<CR>
 "
 "" netrw toggle
 nmap <Leader>ff  :24Lexplore<CR><C-w>w
 "
-"" toggle ltr support
-nmap <leader>bd   :set termbidi!<CR>
+""" toggle ltr support
+"nmap <leader>bd   :set termbidi!<CR>
 "
 "" move into pane
 nmap <C-h>  <C-w>h
@@ -51,11 +53,11 @@ nmap Q gqq
 "" use control-c instead of escape
 imap <C-c> <Esc>
 "
-"" force write to file
-cmap W w!
+""" force write to file
+"cmap W w!
 "
 "" saving read-only files using doas tee
-cmap WW w !doas tee % > /dev/null
+cmap WW w !sudo tee % > /dev/null
 
 "" Completion:
 " Spell:
@@ -64,8 +66,8 @@ imap <C-z> <C-x><C-s>
 "" Q to qa
 cmap Q qa
 "
-"" ref to reaload vim config
-nnoremap <leader>rr :source ~/.vim/vimrc<CR>
+""" ref to reaload vim config
+"nnoremap <leader>rr :source ~/.vim/vimrc<CR>
 "
 "" ref to reaload vim config
-nnoremap <silent> <C-n> :nohlsearch<CR>
+nnoremap <silent> <C-l> :nohlsearch!<CR>

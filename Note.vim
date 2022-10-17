@@ -4,4 +4,4 @@
 " |_||_|___|   P
 "              
 
-autocmd! BufWritePost *note_*.md silent !~/.local/bin/note-build.sh %:p
+autocmd! BufWritePost *note_*.md silent !~/.local/dev/hossein-lap/scripts/note-build.sh %:p
