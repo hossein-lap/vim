@@ -252,6 +252,6 @@ I don't care XD
 
 ## Screenshots
 
-![Shot from skels](shots/skels.png)
+![Shot from vimrc](shots/vimrc.png)
 
 Shout out to Luke Smith, DT, and all other people who I've learned from <3
