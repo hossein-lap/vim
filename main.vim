@@ -1,6 +1,6 @@
 " Main Settings:
 """"""""""""""""
-set number                       " show numbers in the left
+"set number                       " show numbers in the left
 "set nowrap                       " disable line wraping
 "
 set nocp                          " disable vi compatiblities
@@ -46,7 +46,7 @@ set scrolloff=2               " start srolling from 5 lines to the end
 "set t_Co=256                  " set vim to use 256 colors
 set background=dark           " use the dark theme
 "
-set cursorline                " highlight the cursor vertically
+"set cursorline                " highlight the cursor vertically
 "set cursorcolumn              " highlight the cursor horizontally
 "
 set updatetime=20000    " write to swapfile every 30 sec when I'm idle
@@ -95,6 +95,6 @@ set splitright
 if version >= 820              " check the vim version
 	set hidden
 	set list
-	set listchars=tab:›\ 
+	"set listchars=tab:›\ 
 	set listchars=tab:¦\ ,lead:·,trail:⋅
 endif
