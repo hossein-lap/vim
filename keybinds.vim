@@ -20,7 +20,7 @@ noremap <silent> <C-n> :bnext<CR>
 noremap <silent> <C-b> :bprevious<CR> 
 "
 "" toggle paste mode
-nmap <C-P> :set paste!<CR>
+nmap <C-P> :set paste! nu! list!<CR>
 "nmap <C-P> :set list!<CR>
 "
 "" netrw toggle
@@ -69,5 +69,5 @@ cmap Q qa
 """ ref to reaload vim config
 "nnoremap <leader>rr :source ~/.vim/vimrc<CR>
 "
-"" ref to reaload vim config
+"" disable search highlight temporarily
 nnoremap <silent> <C-l> :nohlsearch!<CR>
