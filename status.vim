@@ -57,7 +57,7 @@ endfunction
 
 autocmd BufEnter * call GetGitBranch()
 "" }}}
-"" Show current vim mode{{{
+" Show current vim mode{{{
 let g:currentmode={
     \ 'n'  : 'Normal',
     \ 'no' : 'Normal·Operator Pending',
@@ -80,7 +80,7 @@ let g:currentmode={
     \ 't'  : 'Terminal'
     \}
 
-"}}}
+" }}}
 "
 """ statusline with more things {{{
 "set laststatus=2                                         " show status line
