@@ -1,9 +1,9 @@
-"          _         
-"   _   __(_)___ ___ 
-"  | | / / / __ `__ \
-"  | |/ / / / / / / /
-"  |___/_/_/ /_/ /_/ 
-" 
+"  _    ___
+" | |  / (_)___ ___
+" | | / / / __ `__ \
+" | |/ / / / / / / /
+" |___/_/_/ /_/ /_/
+"
 "" Main Section:
 source ~/.vim/main.vim
 "
@@ -14,13 +14,14 @@ if empty($DISPLAY)
 	set nocursorline
 else
 	"" Terminal
-	"set ls=0
-	"set showtabline=0
-	"set cursorline
+	set ls=2
+	set showtabline=0
+	set nocursorline
+	set nu
 	"" Colorschemes:
 	"solarized minimalist 256_noir codedark
 	"sunbather hybrid xcodedarkhc gruvbox
-	colorscheme hybrid
+	colorscheme 256_noir
 	""
 	"" Statusline:
 	source ~/.vim/simplestatus.vim
@@ -61,3 +62,14 @@ source ~/.vim/Note.vim
 "highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
 autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+
+"autocmd VimEnter * nested
+"\ if !argc() && (line2byte('$') == -1) && (v:progname =~? '^[-gmnq]\=vim\=x\=\%\$')
+"\ | if get(g:, 'startify_session_autoload') && filereadable('Session.vim')
+"\ | source ~/.vim/session.vim
+"\ | else
+"\ | call startify#insane_in_the_membrane()
+"\ | endif
+"\ | endif
+"\ | autocmd! startify VimEnter
+"source ~/.vim/session.vim
