@@ -4,10 +4,10 @@
 " | |/ / / / / / / /
 " |___/_/_/ /_/ /_/
 "
-"" Main Section:
+"" main section:
 source ~/.vim/main.vim
 "
-" Separate Tty And Terminal:
+" separate tty and terminal:
 if empty($DISPLAY)
 	"" TTY
 	colorscheme desert
@@ -16,14 +16,14 @@ else
 	"" Terminal
 	set ls=2
 	set showtabline=0
-	set nocursorline
+	set cursorline
 	set nu
-	"" Colorschemes:
+	"" colorschemes:
 	"solarized minimalist 256_noir codedark
 	"sunbather hybrid xcodedarkhc gruvbox
 	colorscheme 256_noir
 	""
-	"" Statusline:
+	"" statusline:
 	source ~/.vim/simplestatus.vim
 	"source ~/.vim/sstatus.vim
 	"source ~/.vim/status.vim
