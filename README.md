@@ -199,12 +199,12 @@ I do not use a plugin for this. It's all just vim's built-in status line.
 
 ### Other files
 
-- `vi.vim`
+- `plain.vim`
     - It is a very very lightweight config file
     - It is not using any plugins
     - The most external tool it use is `netrw`
     - I did not included it in `vimrc` file
-    - Give it a try: `vim -u $PWD/vi.vim ~/.bashrc`
+    - Give it a try: `vim -u $PWD/plain.vim ~/.bashrc`
 
 ## Directories
 
