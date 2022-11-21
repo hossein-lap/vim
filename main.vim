@@ -39,7 +39,8 @@ set clipboard=unnamedplus     " -
 "
 set mouse=a                   " enable mouse function
 "
-set backup                    " enable auto-backup
+set noswapfile                " disable swapfile
+set nobackup                  " disable auto-backup
 "
 set scrolloff=2               " start srolling from 5 lines to the end
 "
@@ -95,6 +96,6 @@ set splitright
 if version >= 820              " check the vim version
 	set hidden
 	set list
-	"set listchars=tab:›\ 
-	set listchars=tab:¦\ ,lead:·,trail:⋅
+	"set listchars=tab:¦\ ,lead:·,trail:⋅
+	set listchars=tab:›\ ,lead:·,trail:⋅
 endif
