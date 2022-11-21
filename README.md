@@ -187,6 +187,12 @@ set `g:clear_background` variable to
 
 the transparency.
 
+**Keep that in mind**
+
+1. when enabling this section, vim will have no background color.
+thus your background will be your terminal's background color.
+1. this functionality will work on **most** of colorscheme, not **all**.
+
 ```vim
 let g:clear_background=0
 ```
