@@ -10,7 +10,7 @@ for Terminal and TTY in this setup.
 - TTY
     - colorscheme: desert
 
-```sh
+```bash
 if [[ ! -z "${questions}" ]]; then
     echo "Keep reading ;)"
 else
@@ -19,7 +19,7 @@ else
 fi
 ```
 
-```sh
+```bash
 for questions in ${mind}
 do
     echo ${questions}
@@ -27,8 +27,8 @@ done
 ```
 
 - Dependencies:
-
-You need `git` for status-line to show the current git branch.
+    - `git` for status-line to show the current git branch.
+    - compositor if wanna use `background.vim` to have a transparent background.
 
 ## Shortcuts:
 
@@ -68,15 +68,17 @@ And I source all my config files in it.
 Also there is a section, just an `if` statement to say
 
 > if vim opened in a tty, set this colorscheme and do this
-
+>
 > if vim opened inside of a Terminal, do these and use this colorscheme
+
+You get the idea ;)
 
 ### main.vim
 
 This file contains some of basic settings like
 
 - Line numbering
-- No vi compatibilities
+- No vi compatibility
 - Set clipboard
 - etc...
 
@@ -174,6 +176,21 @@ Syntax is like
 autocmd FileType <File_type> nnoremap <Key_binding> :!<Command><CR>
 ```
 
+### background.vim
+
+`vim-transparent` plugin.
+to make colorschemes to respect terminals transparency.
+
+set `g:clear_background` variable to
+    - `0` to disable
+    - `1` to enable
+
+the transparency.
+
+```vim
+let g:clear_background=0
+```
+
 ### {status,sstatus,simplestatus}.vim
 
 This file[s] is just status line.
@@ -195,7 +212,7 @@ There is also some directories in the `$HOME/.vim` dir, right?
 
 Wanna know what are those?!
 
-```sh
+```bash
 case $1 in
     yes)
     echo "Keep reading ;)"
@@ -215,7 +232,6 @@ It's obvious right? It contains color-schemes :)))
 
 1. 256_noir.vim
 1. codedark.vim
-1. dracula.vim
 1. gruvbox.vim
 1. hybrid_material.vim
 1. hybrid_reverse.vim
@@ -252,6 +268,6 @@ I don't care XD
 
 ## Screenshots
 
-![Shot from vimrc](shots/vimrc.png)
+![Shot from vimrc](shots/vim-tp-notp.png)
 
 Shout out to Luke Smith, DT, and all other people who I've learned from <3
