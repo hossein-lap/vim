@@ -1,22 +1,22 @@
-"" Netrw Section:
+""	Netrw Section:
 " open netrw on startup (0 = on, 1 = off)
-let g:NetrwIsOpen=1
+let g:NetrwIsOpen = 1
 "
-let g:netrw_banner			= 0
-let g:netrw_liststyle		= 3
-let g:netrw_browse_split	= 4
-let g:netrw_winsize			= 80
-let g:netrw_menu			= 1
-let g:netrw_altv			= 1
-let g:netrw_cursor			= 0
-let g:netrw_fastbrowse		= 2
-"let g:netrw_sort_by			= "exten"
-let g:netrw_sort_by			= "name"
-let g:netrw_sort_direction			= "normal"
-let g:netrw_special_syntax	= 1
-"let g:netrw_preview	  = 1
-"let g:netrw_alto		  = 0
-"let g:netrw_keepdir	  = 0
+let	g:netrw_banner			= 0
+let	g:netrw_liststyle		= 3
+let	g:netrw_browse_split	= 4
+let	g:netrw_winsize			= 80
+let	g:netrw_menu			= 1
+let	g:netrw_altv			= 1
+let	g:netrw_cursor			= 0
+let	g:netrw_fastbrowse		= 2
+let	g:netrw_sort_by			= "name"
+let	g:netrw_sort_direction	= "normal"
+let	g:netrw_special_syntax	= 1
+"let g:netrw_sort_by		= "exten"
+"let g:netrw_preview		= 1
+"let g:netrw_alto			= 0
+"let g:netrw_keepdir		= 0
 "
 "
 "" split char
@@ -109,7 +109,7 @@ augroup netrw_mappings
 augroup END
 
 "" Close Netrw if it's the only opened buffer
-"autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
+autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
 
 " Make netrw act like a project Draw
 augroup ProjectDrawer
