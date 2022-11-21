@@ -192,7 +192,7 @@ the transparency.
 - when enabling this section, vim will have no background color.
 thus your background will be your terminal's background color.
 
-| On terminal with no transparency | On terminal with no transparency |
+| On terminal with no transparency | On terminal with transparency |
 |:--------------------------------:|:--------------------------------:|
 | ![on no transparent terminal](shots/small-shot-notp.png) | ![on transparent terminal](shots/small-shot-tp.png) |
 
