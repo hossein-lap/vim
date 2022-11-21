@@ -36,7 +36,7 @@ set laststatus=2                  " show status line
 set statusline=                   " status line config
 set statusline+=%1*\              " set color, blank space
 "set statusline+=%#StatusLine#\    " default status color
-set statusline+=%f\               "
+set statusline+=%F\               "
 set statusline+=%m\               "
 set statusline+=%r%h%w            " readonly, helpfile, preview
 set statusline+=%=                " switch to the right side
