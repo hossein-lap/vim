@@ -55,46 +55,48 @@ endfunction
 au FileType markdown,rmd call MDownFill()
 "au FileType html,xml inoremap <  <><Left>
 " }}}
-" vim-plug {{{
-call plug#begin('~/.vim/plugged/')
-	Plug 'tribela/vim-transparent' " transparent background
-	""" colorschemes
-	"Plug 'hossein-lap/vim-256noir'
-	"Plug 'w0ng/vim-hybrid'
-	"Plug 'nikolvs/vim-sunbather'
-	"Plug 'dikiaap/minimalist'
-	"Plug 'tomasiser/vim-code-dark'
-	"Plug 'ericbn/vim-solarized'
-	"Plug 'morhetz/gruvbox'
-	"Plug 'fxn/vim-monochrome'
-	"Plug 'kristijanhusak/vim-hybrid-material'
-	"Plug 'arzg/vim-colors-xcode'
-call plug#end()
-
-"""" Some more plugins:
-"""" Do not uncomment these here
-"""" You should put them between [call plug#XXX] first
-
-
-"  Plug 'Jorengarenar/miniSnip' " minimal snippet manager
-"  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " latex compile/preview
-"  Plug 'lifepillar/vim-mucomplete'
-"  Plug 'tpope/vim-markdown'
-"  Plug 'vim-scripts/fountain.vim'
-""  Plug 'ap/vim-css-color'			   " Color previews for CSS
-""  Plug 'vim-scripts/AutoComplPop'	   " auto completion plugin
-""  Plug 'itchyny/lightline.vim'		  " Lightline statusbar
-""  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-""  Plug 'arcticicestudio/nord-vim'
-""  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-""  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-""  Plug 'mcchrish/nnn.vim'
-
-"" }}}
-""
+"" vim-plug {{{
+"call plug#begin('~/.vim/plugged/')
+	"Plug 'tribela/vim-transparent' " transparent background
+	"""" colorschemes
+	""Plug 'hossein-lap/vim-256noir'
+	""Plug 'w0ng/vim-hybrid'
+	""Plug 'nikolvs/vim-sunbather'
+	""Plug 'dikiaap/minimalist'
+	""Plug 'tomasiser/vim-code-dark'
+	""Plug 'ericbn/vim-solarized'
+	""Plug 'morhetz/gruvbox'
+	""Plug 'fxn/vim-monochrome'
+	""Plug 'kristijanhusak/vim-hybrid-material'
+	""Plug 'arzg/vim-colors-xcode'
+"call plug#end()
+"
+""""" Some more plugins:
+""""" Do not uncomment these here
+""""" You should put them between [call plug#XXX] first
+"
+"
+""  Plug 'Jorengarenar/miniSnip' " minimal snippet manager
+""  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " latex compile/preview
+""  Plug 'lifepillar/vim-mucomplete'
+""  Plug 'tpope/vim-markdown'
+""  Plug 'vim-scripts/fountain.vim'
+"""  Plug 'ap/vim-css-color'			   " Color previews for CSS
+"""  Plug 'vim-scripts/AutoComplPop'	   " auto completion plugin
+"""  Plug 'itchyny/lightline.vim'		  " Lightline statusbar
+"""  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"""  Plug 'arcticicestudio/nord-vim'
+"""  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"""  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+"""  Plug 'mcchrish/nnn.vim'
+"
+""" }}}
+"" background transparentcy
+source ~/.vim/background.vim
+"
 "set complete+=kspell
 "set completeopt=menuone,popup,noinsert  " always show popup menu
-""
+"
 "" enable filetype detection:
 "filetype on
 "filetype plugin on
