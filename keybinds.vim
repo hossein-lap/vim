@@ -70,4 +70,4 @@ cmap Q qa
 "nnoremap <leader>rr :source ~/.vim/vimrc<CR>
 "
 "" disable search highlight temporarily
-nnoremap <silent> <C-l> :hlsearch!<CR>
+nnoremap <silent> <C-l> :set hlsearch!<CR>
