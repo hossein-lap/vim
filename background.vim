@@ -1,5 +1,4 @@
-" 0: Disable
-" 1: Enable
+" 1 = on, 0 = off
 let g:clear_background=0
 
 function! s:get_highlight_colors(group)
