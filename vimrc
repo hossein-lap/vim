@@ -8,8 +8,18 @@
 source ~/.vim/main.vim
 "
 " separate tty and terminal:
-if empty($DISPLAY)
+if has("gui_running")
+	set nowrap
+	colorscheme hybrid
+	source ~/.vim/status.vim
+	source ~/.vim/extra.vim
+	set cursorline
+	set nu
+	set nolist
+	set guifont=Source\ Code\ Pro\ Medium\ 16
+elseif empty($DISPLAY)
 	"" TTY
+	set nolist
 	colorscheme desert
 	set nocursorline
 else
@@ -24,10 +34,10 @@ else
 	colorscheme 256_noir
 	""
 	"" statusline:
-	source ~/.vim/simplestatus.vim
+	"source ~/.vim/simplestatus.vim
 	"source ~/.vim/sstatus.vim
 	"source ~/.vim/status.vim
-	""source ~/.vim/extra.vim
+	source ~/.vim/extra.vim
 endif
 "
 hi SpecialKey ctermbg=NONE guibg=NONE
