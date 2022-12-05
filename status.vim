@@ -2,9 +2,9 @@
 " | || | __|   H
 " | __ | _|    A
 " |_||_|___|   P
-"               
+"
 set ls=2
-"                                  "             {{{
+"""             {{{
 """ status line drafts -used to be functions- {{{
 "" git status function
 ""
@@ -40,47 +40,6 @@ set ls=2
 "
 "" Status line
 "" default: set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)}}}
-"" git function {{{
-function! StatuslineGitBranch()
-    if exists("g:git_branch")
-        return g:git_branch
-    else
-        return ''
-    endif
-endfunction
-
-function! GetGitBranch()
-    let l:is_git_dir = system('echo -n $(git rev-parse --is-inside-work-tree)')
-    let g:git_branch = l:is_git_dir == 'true' ?
-        \ system('bash -c "echo -n $(git rev-parse --abbrev-ref HEAD)"') : ''
-endfunction
-
-autocmd BufEnter * call GetGitBranch()
-"" }}}
-" Show current vim mode{{{
-let g:currentmode={
-    \ 'n'  : 'Normal',
-    \ 'no' : 'Normal·Operator Pending',
-    \ 'v'  : 'Visual',
-    \ 'V'  : 'V·Line',
-\ "\<C-V>" : 'V·Block',
-    \ 's'  : 'Select',
-    \ 'S'  : 'S·Line',
-    \ '^S' : 'S·Block',
-    \ 'i'  : 'Insert',
-    \ 'R'  : 'Replace',
-    \ 'Rv' : 'V·Replace',
-    \ 'c'  : 'Command',
-    \ 'cv' : 'Vim Ex',
-    \ 'ce' : 'Ex',
-    \ 'r'  : 'Prompt',
-    \ 'rm' : 'More',
-    \ 'r?' : 'Confirm',
-    \ '!'  : 'Shell',
-    \ 't'  : 'Terminal'
-    \}
-
-" }}}
 "
 """ statusline with more things {{{
 "set laststatus=2                                         " show status line
@@ -229,40 +188,75 @@ let g:currentmode={
 "}}}
 " "}}}
 "" used one {{{
-"hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc cterm=bold gui=bold
-"hi User4 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#000000 cterm=bold gui=bold
-"hi User3 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
-"hi User2 ctermfg=243 ctermbg=232 guifg=#989898 guibg=#000000 "cterm=bold gui=bold
-"hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#000000 "cterm=bold gui=bold
+""hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc cterm=bold gui=bold
+""hi User4 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#000000 cterm=bold gui=bold
+""hi User3 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
+""hi User2 ctermfg=243 ctermbg=232 guifg=#989898 guibg=#000000 "cterm=bold gui=bold
+""hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#000000 "cterm=bold gui=bold
 "" }}}
-"
-"
-hi User1 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 "cterm=bold gui=bold
-hi User2 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
+" Show current vim mode{{{
+let g:currentmode={
+    \ 'n'  : 'Normal',
+    \ 'no' : 'Normal·Operator Pending',
+    \ 'v'  : 'Visual',
+    \ 'V'  : 'V·Line',
+\ "\<C-V>" : 'V·Block',
+    \ 's'  : 'Select',
+    \ 'S'  : 'S·Line',
+    \ '^S' : 'S·Block',
+    \ 'i'  : 'Insert',
+    \ 'R'  : 'Replace',
+    \ 'Rv' : 'V·Replace',
+    \ 'c'  : 'Command',
+    \ 'cv' : 'Vim Ex',
+    \ 'ce' : 'Ex',
+    \ 'r'  : 'Prompt',
+    \ 'rm' : 'More',
+    \ 'r?' : 'Confirm',
+    \ '!'  : 'Shell',
+    \ 't'  : 'Terminal'
+    \}
 
-"set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ Normal\ ':''}
-"set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ Insert\ ':''}
-"set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ Replace\ ':''}
-"set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ Visual\ ':''}
-"set statusline+=%#VisualColor#%{(mode()=='V')?'\ \ V-Line\ ':''}
-"set statusline+=%#VisualColor#%{(mode()=='CTRL-v')?'\ \ V-Block\ ':''}
+" }}}
+" git function {{{
+function! StatuslineGitBranch()
+    if exists("g:git_branch")
+        return g:git_branch
+    else
+        return ''
+    endif
+endfunction
+
+function! GetGitBranch()
+    let l:is_git_dir = system('echo -n $(git rev-parse --is-inside-work-tree)')
+    let g:git_branch = l:is_git_dir == 'true' ?
+        \ system('bash -c "echo -n \"git:$(git rev-parse --abbrev-ref HEAD) » \""') : ''
+endfunction
+
+autocmd BufEnter * call GetGitBranch()
+" }}}
+"
+"
+"hi User1 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
+"hi User2 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
 
 " current config section {{{
-set laststatus=2                                           " show status line
-set statusline=                                            " status line config
-set statusline+=%2*\ %{toupper(g:currentmode[mode()])}\    " The current mode
-set statusline+=\»\                                        " blank space
-set statusline+=%1*\ %<%F\                                 " Full path
-set statusline+=%1*\ %m                                    " blank space
-set statusline+=%1*\ %r                                    " blank space
-set statusline+=%=                                         " Switch to the right side
-set statusline+=%1*\ %c                                    " cursor current position
-set statusline+=%1*\ \|\                                   " blank space
-set statusline+=%1*%l\/%L\                                 " blank space
-set statusline+=%1*\|                                      " blank space
-set statusline+=%1*\ \-%Y\-\                               " file type
-set statusline+=%2*\ \«                                    " blank space
-set statusline+=\                                          " blank space
-set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
-set statusline+=\                                          " blank space
+set laststatus=2                                      " show status line
+set statusline=                                       " status line config
+set statusline+=\ %{toupper(g:currentmode[mode()])}\  " The current mode
+set statusline+=\»\                                   " blank space
+set statusline+=%{StatuslineGitBranch()}              " git brunch in current directory
+set statusline+=%<%F\                                 " Full path
+set statusline+=\ %m                                  " blank space
+set statusline+=\ %r                                  " blank space
+set statusline+=%=                                    " Switch to the right side
+set statusline+=\ Ln\ %l\,\ Col\ %c                   " cursor current position
+set statusline+=\ \                                   " blank space
+set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}     " Encoding
+set statusline+=\ \                                   " blank space
+set statusline+=\ %{&ff}                              " FileFormat (dos/unix..)
+set statusline+=\ \                                   " blank space
+set statusline+=\                                     " blank space
+set statusline+=%Y                                    " file type
+set statusline+=\                                     " blank space
 " }}}
