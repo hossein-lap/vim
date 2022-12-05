@@ -5,14 +5,14 @@
 " |___/_/_/ /_/ /_/
 "
 "" main section:
-source ~/.vim/main.vim
+source ~/.vim/vimscript/main.vim
 "
 " separate tty and terminal:
 if has("gui_running")
 	set nowrap
 	colorscheme hybrid
-	source ~/.vim/status.vim
-	source ~/.vim/extra.vim
+	source ~/.vim/vimscript/status.vim
+	source ~/.vim/vimscript/extra.vim
 	set cursorline
 	set nu
 	set nolist
@@ -34,40 +34,40 @@ else
 	colorscheme 256_noir
 	""
 	"" statusline:
-	"source ~/.vim/simplestatus.vim
-	"source ~/.vim/sstatus.vim
-	"source ~/.vim/status.vim
-	source ~/.vim/extra.vim
+	"source ~/.vim/vimscript/simplestatus.vim
+	"source ~/.vim/vimscript/sstatus.vim
+	"source ~/.vim/vimscript/status.vim
+	source ~/.vim/vimscript/extra.vim
 endif
 "
 hi SpecialKey ctermbg=NONE guibg=NONE
 
 "" keybinding
-source ~/.vim/keybinds.vim
+source ~/.vim/vimscript/keybinds.vim
 "
 "" netrw
-source ~/.vim/netrw.vim
+source ~/.vim/vimscript/netrw.vim
 "
 "" add ready-to-use text by .ext
-source ~/.vim/skels.vim
+source ~/.vim/vimscript/skels.vim
 "
 "" compile section
-source ~/.vim/oldcp.vim
+source ~/.vim/vimscript/oldcp.vim
 "
 "" take note
-source ~/.vim/Note.vim
+source ~/.vim/vimscript/Note.vim
 "
 "" scpecial characters
-source ~/.vim/abreviation.vim
+source ~/.vim/vimscript/abreviation.vim
 "
 "" define sent filetype
-au FileType sent source ~/.vim/sent.vim
+au FileType sent source ~/.vim/vimscript/sent.vim
 "
 "" add some extra features + plugins (commented out)
-source ~/.vim/extra.vim
+source ~/.vim/vimscript/extra.vim
 "
 "" Build notes from one script of mine (if you don's know or use it, just comment it out)
-source ~/.vim/Note.vim
+source ~/.vim/vimscript/Note.vim
 "
 "highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
@@ -76,10 +76,10 @@ autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 g
 "autocmd VimEnter * nested
 "\ if !argc() && (line2byte('$') == -1) && (v:progname =~? '^[-gmnq]\=vim\=x\=\%\$')
 "\ | if get(g:, 'startify_session_autoload') && filereadable('Session.vim')
-"\ | source ~/.vim/session.vim
+"\ | source ~/.vim/vimscript/session.vim
 "\ | else
 "\ | call startify#insane_in_the_membrane()
 "\ | endif
 "\ | endif
 "\ | autocmd! startify VimEnter
-"source ~/.vim/session.vim
+"source ~/.vim/vimscript/session.vim

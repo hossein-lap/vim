@@ -92,7 +92,7 @@ au FileType markdown,rmd call MDownFill()
 "
 """ }}}
 "" background transparentcy
-source ~/.vim/background.vim
+source ~/.vim/vimscript/background.vim
 "
 "set complete+=kspell
 "set completeopt=menuone,popup,noinsert  " always show popup menu
