@@ -1,11 +1,10 @@
-"   _  _ ___    
+"   _  _ ___
 "  | || | __|   H
 "  | __ | _|    A
 "  |_||_|___|   P
-"               
-"                                     
+"
 "set number              " show numbers in the left
-"set nowrap              " disable line wraping
+set nowrap              " disable line wraping
 set nocp                " disable vi compatiblities
 "colorscheme 256_noir    " colorscheme
 "
@@ -13,32 +12,32 @@ set showcmd             " show enterd key
 set showmode            " diable showing mode in the old way
 "
 set autochdir           " change current dir to file's dir
-"                                 
-"" tab settings           
+"
+"" tab settings
 set tabstop=4           " tap size in this case is (2)
 set noexpandtab         " insert actual tab char
 set shiftwidth=4        " 
 set softtabstop=4       " 
-"                          
-"set autoindent          " enable line indentaion
-"set smartindent         " smart indent enable
-"set cindent             " more 
-syntax off
+"
+set autoindent          " enable line indentaion
+set smartindent         " smart indent enable
+set cindent             " more 
+"syntax on
 set showmatch           " show match brackets, parantesies, etc..
-"                          
-"set ls=1
+"
+"set ls=2
 "
 set encoding=utf-8      " set encoding to utf-8
 "
-"set hlsearch            " enable search highlighting
-"                                      
+set hlsearch            " enable search highlighting
+"
 set bs=2                " makes the backspace work functinal
-"                                      
+"
 "set clipboard=unnamed   " set clipboard buffer
 set clipboard=unnamedplus     " -
-"                              
-"set scrolloff=5               " start srolling from 5 lines to the end
-"                              
+"
+set scrolloff=5               " start srolling from 5 lines to the end
+"
 ""  netrw config
 "let g:netrw_alto        = 0
 "let g:netrw_banner       = 0                  
